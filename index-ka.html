@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>სანტექნიკი და ელექტრიკი: სასწრაფოდ თქვენთან! · გამოძახება სახლში</title>
+<meta name="description" content="სანტექნიკი და ელექტრიკი გამოძახებით {{город}}-ში: ჩამოსვლის ინტერვალი და ტიპური სამუშაოს ფასი ჩამოსვლამდე, სტანდარტული დეტალები თან, გარანტია წერილობით.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ka_GE">
+<meta property="og:site_name" content="სანტექნიკი და ელექტრიკი: სასწრაფოდ თქვენთან!">
+<meta property="og:title" content="სანტექნიკი და ელექტრიკი · გამოძახება სახლში">
+<meta property="og:description" content="სანტექნიკი და ელექტრიკი სახლში {{город}}-ში: დაწერეთ, რა მოხდა, და მიამაგრეთ ფოტო. უპასუხებთ ჩამოსვლის ინტერვალითა და ტიპური სამუშაოს ფასით ჩამოსვლამდე.">
+<meta property="og:url" content="{{адрес сайта}}">
+<meta property="og:image" content="{{адрес сайта}}/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hero-voda-m.webp" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-voda.webp" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Onest:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%274%27 width=%2724%27 height=%2724%27 rx=%277%27 fill=%27%23f07a1f%27/%3E%3Crect x=%2714%27 y=%279%27 width=%274%27 height=%2714%27 rx=%272%27 fill=%27%231c1f23%27/%3E%3C/svg%27%3E">
+<link rel="stylesheet" href="vibe.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","additionalType":["https://schema.org/Plumber","https://schema.org/Electrician"],"name":"სანტექნიკი და ელექტრიკი: სასწრაფოდ თქვენთან!","description":"სანტექნიკი და ელექტრიკი გამოძახებით: ჩამოსვლის ინტერვალი და ტიპური სამუშაოს ფასი ჩამოსვლამდე, სტანდარტული დეტალები თან, გარანტია წერილობით.","url":"{{адрес сайта}}","image":"{{адрес сайта}}/assets/og.jpg","telephone":"{{телефон}}","openingHours":"{{часы}}","areaServed":"{{город}}","address":{"@type":"PostalAddress","streetAddress":"{{адрес}}","addressLocality":"{{город}}","addressCountry":"GE"},"priceRange":"ზუსტდება"}
+</script>
+<style>
+  /* ---- грузинские шрифты ------------------------------------------------ */
+  .v-page {
+    --v-font-display: "Noto Sans Georgian", "Sylfaen", system-ui, sans-serif;
+    --v-font-text: "Noto Sans Georgian", "Sylfaen", system-ui, sans-serif;
+  }
+
+  /* ---- тема: шесть цветов, два шрифта --------------------------------- */
+  .v-page {
+    --v-canvas: #1c1f23; --v-surface: #272b31;
+    --v-ink: #f0eeea; --v-ink-soft: #a4a8ae;
+    --v-accent: #f07a1f; --v-accent-ink: #1a0f05;
+    --v-shadow-color: 8 10 13;
+    --v-radius: 10px;
+    --v-display-weight: 600;
+    --v-track-tight: 0;
+  }
+  html, body { background: #1c1f23; }
+  .v-page .v-lede { font-weight: 400; }
+  .v-page .v-label { font-weight: 500; }
+  .v-page .v-btn { font-size: var(--v-t-base); font-weight: 600; }
+
+  /* ---- шапка ---------------------------------------------------------------- */
+  .bar { position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; justify-content: space-between;
+    padding: var(--v-3) var(--v-gutter); gap: var(--v-4);
+    background: linear-gradient(to bottom, rgb(28 31 35 / .85), rgb(28 31 35 / 0));
+    transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out); }
+  .bar.is-scrolled { background: rgb(28 31 35 / .82); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--v-hair); }
+  .bar__mark { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); letter-spacing: .02em; text-decoration: none;
+    display: inline-flex; align-items: center; gap: .5em; min-height: 44px; white-space: nowrap; }
+  .bar__mark i { width: .78em; height: .78em; border-radius: .22em; background: var(--v-accent); display: inline-block; position: relative; }
+  .bar__mark i::after { content: ""; position: absolute; left: 50%; top: 22%; width: 16%; height: 56%; margin-left: -8%; border-radius: 1px; background: var(--v-canvas); }
+  .bar__name { display: inline-flex; align-items: baseline; gap: .45em; }
+  .bar__tag { font-size: .68em; font-weight: 500; color: var(--v-accent); letter-spacing: .01em; }
+  .bar__right { display: flex; align-items: center; gap: var(--v-4); }
+  .bar__tel { text-decoration: none; font-weight: 600; font-size: var(--v-t-sm); color: var(--v-ink); display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--v-2); }
+  .bar__lang { text-decoration: none; font-weight: 600; font-size: var(--v-t-sm); color: var(--v-ink-soft); display: inline-flex; align-items: center; min-height: 44px;
+    padding: 0 .95em; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--v-hair-strong); transition: color .25s var(--v-ease-out), box-shadow .25s var(--v-ease-out); }
+  .bar__lang:hover { color: var(--v-accent); box-shadow: inset 0 0 0 1px var(--v-accent); }
+  @media (max-width: 700px) {
+    .bar__tel { display: none; }
+    .bar .v-btn { display: none; }
+    .bar__right { gap: var(--v-2); }
+    .bar__mark { font-size: .95rem; }
+    .bar__tag { display: none; }
+    .bar__lang { padding: 0 .8em; }
+  }
+  @media (max-width: 860px) { .bar.is-scrolled { background: rgb(28 31 35 / .96); } }
+  /* телефон: подписи не мельче 15 px (--v-t-sm на 390 px = 14 px) */
+  @media (max-width: 860px) {
+    .hero__tel, .plist .note, .prices__incl, .promise__facts span, .close__hint,
+    .poka__fig figcaption, .prices__fig figcaption, .promise__fig figcaption { font-size: .95rem; }
+  }
+
+  /* ---- hero: диптих «вода | электрика», две половины едут с разной скоростью ---- */
+  .hero__half img { position: absolute; max-width: none; top: -40px; width: 50%; height: min(50vw, 96svh); object-fit: cover; object-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); }
+  .hero__half--voda img { left: 0; }
+  .hero__half--svet img { left: 50%; }
+  .hero__half img { filter: brightness(var(--b, 1)); }
+  .hero__half--voda { --b: calc(1 - .45 * clamp(0, (var(--v-p, 0) - .45) / .45, 1)); }
+  .hero__half--svet { --b: calc(.55 + .45 * clamp(0, (var(--v-p, 0) - .45) / .45, 1)); }
+  .hero__seam { position: absolute; z-index: 1; left: 50%; top: 0; bottom: 0; width: 4px; margin-left: -2px; background: var(--v-canvas); pointer-events: none; }
+  .hero__ask { position: absolute; z-index: 3; top: clamp(5rem, 13vh, 7rem); font-family: var(--v-font-display); font-weight: 600;
+    font-size: clamp(2.2rem, 1.4rem + 3.6vw, 4.6rem); line-height: 1; letter-spacing: var(--v-track-tight); }
+  /* длинное «ნაპერწკლავს?» на узких экранах – кегль меньше */
+  @media (max-width: 700px) { .hero__ask { font-size: clamp(1.25rem, 5.4vw, 1.8rem); } }
+  /* «დიოდება?» – голубая волна бежит по буквам, чтобы не сливалось с фото */
+  .hero__ask--voda { color: transparent;
+    background-image: linear-gradient(100deg, #eef8ff 0%, #eef8ff 30%, #2fb4ff 45%, #a5e2ff 55%, #eef8ff 70%, #eef8ff 100%);
+    background-size: 230% 100%; -webkit-background-clip: text; background-clip: text;
+    filter: drop-shadow(0 2px 10px rgb(0 0 0 / .5));
+    animation: hero-ask-wave 3.4s linear infinite; }
+  @keyframes hero-ask-wave { from { background-position: 115% 0; } to { background-position: -115% 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__ask--voda { animation: none; background-image: linear-gradient(100deg, #eef8ff, #8ed4ff 55%, #eef8ff); background-position: 0 0; } }
+  /* «ნაპერწკლავს?» – оранжевая искрящая волна; задержка, чтобы волны не бежали синхронно */
+  .hero__ask--svet { color: transparent;
+    background-image: linear-gradient(100deg, #fff6ec 0%, #fff6ec 30%, #ff9a2e 45%, #ffd9a8 55%, #fff6ec 70%, #fff6ec 100%);
+    background-size: 230% 100%; -webkit-background-clip: text; background-clip: text;
+    filter: drop-shadow(0 2px 10px rgb(0 0 0 / .5));
+    animation: hero-ask-wave 3.4s linear infinite; animation-delay: -1.7s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__ask--svet { animation: none; background-image: linear-gradient(100deg, #fff6ec, #ffb35e 55%, #fff6ec); background-position: 0 0; } }
+  .hero__ask--voda { left: var(--v-gutter); }
+  .hero__ask--svet { left: calc(50% + var(--v-gutter) * .5); }
+  .hero__floor { position: absolute; inset: auto 0 0 0; height: 62%; z-index: 2; pointer-events: none;
+    background: linear-gradient(to top, var(--v-canvas) 0%, var(--v-canvas) 16%, rgb(28 31 35 / .82) 46%, rgb(28 31 35 / .4) 74%, transparent 100%); }
+  .hero__tag { position: absolute; z-index: 3; top: clamp(4.6rem, 11vh, 6.2rem); display: inline-flex; align-items: center; gap: .55em;
+    padding: .5em .95em .5em .8em; border-radius: 999px; background: rgb(28 31 35 / .78); color: var(--v-ink);
+    font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .hero__tag i { width: .55em; height: .55em; border-radius: 50%; background: var(--v-accent); }
+  .hero__tag--voda { left: var(--v-gutter); }
+  .hero__tag--svet { left: calc(50% + var(--v-gutter) * .5); }
+  .hero__copy { bottom: clamp(5rem, 12vh, 8rem); max-width: min(70rem, 92vw); }
+  .hero__label { display: block; margin-bottom: var(--v-4); color: var(--v-ink); opacity: .85; }
+  .hero__copy .v-display { font-size: clamp(2.4rem, 1.5rem + 3.3vw, 4.4rem); line-height: 1; max-width: 22ch; }
+  .hero__copy .v-lede { margin-top: var(--v-5); color: var(--v-ink); opacity: .92; max-width: 62ch; }
+  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-4) var(--v-6); margin-top: var(--v-6); }
+  .hero__tel { text-decoration: none; color: var(--v-ink); font-size: var(--v-t-sm); display: inline-flex; align-items: center; min-height: 44px; gap: .35em; }
+  .hero__tel b { font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+  .hero__note { position: absolute; z-index: 3; right: var(--v-gutter); bottom: clamp(5rem, 12vh, 8rem); text-align: right; display: grid; gap: .3em; }
+  .hero__note .v-nums { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); letter-spacing: .01em; }
+  .hero__note .hero__int { color: var(--v-ink); font-size: var(--v-t-sm); }
+  @media (max-width: 1100px) { .hero__note { display: none; } }
+  @media (max-width: 860px) {
+    .hero__half img { top: -24px; height: calc(48svh + 48px); }
+    .hero__half--voda img { object-position: 82% 50%; }
+    .hero__half--svet img { object-position: 72% 50%; }
+    .hero__seam { width: 3px; margin-left: -1.5px; bottom: 50%; }
+    .hero__floor { height: 70%; background: linear-gradient(to top, var(--v-canvas) 0%, var(--v-canvas) 66%, rgb(28 31 35 / .7) 80%, transparent 100%); }
+    .hero__tag { top: 4.6rem; font-size: .72rem; padding: .45em .8em .45em .7em; }
+    .hero__tag--svet { left: calc(50% + .6rem); }
+    .hero__tag--voda { left: .6rem; }
+    .hero__copy { bottom: clamp(2.5rem, 6vh, 4rem); }
+    .hero__copy .v-display { font-size: var(--v-t-2xl); max-width: none; }
+    .hero__copy .v-lede { font-size: var(--v-t-base); margin-top: var(--v-4); }
+    .hero__label { margin-bottom: var(--v-3); }
+    .hero__cta { margin-top: var(--v-5); gap: var(--v-2) var(--v-5); }
+  }
+  @media (max-width: 600px) and (max-height: 700px) { .hero__half img { height: calc(40svh + 48px); } .hero__seam { bottom: 58%; } }
+
+  /* ---- фирменный ход: трекер «სად არის მასტერი» ---------------------------- */
+  .track { position: fixed; left: 0; right: 0; bottom: 0; z-index: 32; display: grid; grid-template-columns: minmax(15rem, 20rem) 1fr; align-items: center; column-gap: var(--v-8);
+    padding: .7rem var(--v-gutter) .75rem; background: rgb(28 31 35 / .8); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    box-shadow: 0 -1px 0 var(--v-hair); transition: transform .3s var(--v-ease-out), opacity .3s var(--v-ease-out); }
+  .track__status { display: grid; gap: .15em; }
+  .track__status .v-label { font-size: .7rem; }
+  .track__state { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); line-height: 1.1; letter-spacing: .01em; transition: opacity .18s var(--v-ease-out); }
+  .track__state.is-swap { opacity: 0; }
+  .track__line { position: relative; height: 2.4rem; --edge: 4.5rem; --tp: 0; }
+  .track__rail { position: absolute; left: var(--edge); right: var(--edge); top: .6rem; height: 2px; background: var(--v-hair-strong); }
+  .track__rail i { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--tp) * 100%); background: var(--v-accent); }
+  .track__stops { position: absolute; left: var(--edge); right: var(--edge); top: 0; display: flex; justify-content: space-between; }
+  .track__stops li { position: relative; width: 0; display: flex; flex-direction: column; align-items: center; }
+  .track__stops li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 2px; border-radius: 50%; background: var(--v-canvas); box-shadow: 0 0 0 2px var(--v-hair-strong);
+    transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out); }
+  .track__stops li span { white-space: nowrap; margin-top: .5rem; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--v-ink-soft); transition: color .3s var(--v-ease-out); }
+  .track__stops li.is-past::before { background: var(--v-accent); box-shadow: 0 0 0 2px var(--v-accent); }
+  .track__stops li.is-past span { color: var(--v-ink); }
+  .track__marker { position: absolute; top: .6rem; left: calc(var(--edge) + var(--tp) * (100% - 2 * var(--edge))); width: 1.7rem; height: .95rem; margin: -.475rem 0 0 -.85rem;
+    border-radius: .5rem; background: var(--v-accent); box-shadow: 0 0 0 3px var(--v-canvas), 0 6px 18px rgb(240 122 31 / .45); }
+  .track__marker::after { content: ""; position: absolute; right: .3rem; top: .3rem; width: .35rem; height: .35rem; border-radius: 50%; background: var(--v-accent-ink); opacity: .7; }
+  .track__btn { display: none; }
+  @media (max-width: 860px) {
+    .track { grid-template-columns: 1fr auto; grid-template-areas: "status btn" "line btn"; column-gap: var(--v-4); row-gap: .35rem;
+      padding: .6rem var(--v-gutter) calc(.6rem + env(safe-area-inset-bottom)); background: rgb(28 31 35 / .94); }
+    .track__status { grid-area: status; min-width: 0; }
+    .track__status .v-label { display: none; }
+    .track__state { font-size: .95rem; }
+    .v-page.track-on .bar .v-btn { display: none; }
+    .track__line { grid-area: line; height: 12px; --edge: 5px; }
+    .track__rail { top: 5px; }
+    .track__stops li::before { width: 8px; height: 8px; margin-top: 1px; }
+    .track__stops li span { display: none; }
+    .track__marker { top: 5px; width: 1.3rem; height: .75rem; margin: -.375rem 0 0 -.65rem; }
+    .track__btn { display: inline-flex; grid-area: btn; padding: 0 1.1em; min-height: 46px; font-size: .95rem; }
+    .track.is-hidden { transform: translateY(110%); opacity: 0; pointer-events: none; }
+  }
+
+  /* ---- цена бездействия: строки и фото с шторкой ---------------------------- */
+  .poka { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--v-9); align-items: start; }
+  .rows li { padding: var(--v-5) 0; border-top: 1px solid var(--v-hair); display: grid; gap: var(--v-1); }
+  .rows li:last-child { border-bottom: 1px solid var(--v-hair); }
+  .rows h3 { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-xl); letter-spacing: var(--v-track-normal); line-height: 1.1; }
+  .rows p { color: var(--v-ink-soft); max-width: 48ch; text-wrap: pretty; }
+  .turn { padding: var(--v-5) var(--v-6); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1), var(--v-edge); display: grid; gap: var(--v-2); }
+  .turn .v-label { color: var(--v-accent); }
+  .turn__text { font-size: var(--v-t-lg); line-height: 1.35; text-wrap: pretty; max-width: 40ch; }
+  .poka__fig { position: sticky; top: clamp(5rem, 12vh, 7rem); aspect-ratio: 4 / 3; border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2), var(--v-edge); }
+  .poka__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .poka__fig figcaption, .prices__fig figcaption { position: absolute; left: var(--v-5); right: var(--v-5); bottom: var(--v-5); z-index: 1; font-size: var(--v-t-sm); color: var(--v-ink); }
+  .poka__fig::after, .prices__fig::after { content: ""; position: absolute; inset: auto 0 0 0; height: 55%; background: linear-gradient(to top, rgb(0 0 0 / .82), rgb(0 0 0 / .35) 50%, transparent); pointer-events: none; }
+  @media (max-width: 860px) {
+    .poka { grid-template-columns: 1fr; gap: var(--v-7); }
+    .poka__fig { position: static; aspect-ratio: 4 / 3; }
+    .rows h3 { font-size: var(--v-t-lg); }
+    .turn { padding: var(--v-5); }
+  }
+
+  /* ---- как проходит вызов: сцена со статусами --------------------------------- */
+  #kak .steps__img { overflow: hidden; }
+  .steps__img img { width: 100%; height: 100%; left: 0; top: 0; object-fit: cover; }
+  .steps__copy { max-width: 46rem; }
+  .steps__copy .v-display--lg { font-size: clamp(2rem, 1.3rem + 3vw, 4rem); }
+  .steps__copy .v-lede { margin-top: var(--v-4); max-width: 40ch; color: var(--v-ink); opacity: .9; }
+  .chip { display: inline-flex; align-items: center; gap: .55em; margin-bottom: var(--v-4); padding: .35em .9em .35em .7em; border-radius: 999px;
+    box-shadow: inset 0 0 0 1px var(--v-hair-strong); background: rgb(28 31 35 / .55); font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-ink); }
+  .chip i { width: .55em; height: .55em; border-radius: 50%; background: var(--v-accent); box-shadow: 0 0 0 3px rgb(240 122 31 / .25); }
+  @media (max-width: 860px) {
+    .steps__copy .v-display--lg { font-size: var(--v-t-xl); }
+    .steps__copy .v-lede { font-size: var(--v-t-base); }
+  }
+
+  /* ---- цены: две колонки строк, сумка sticky ----------------------------------- */
+  .prices { display: grid; grid-template-columns: 1.45fr .55fr; gap: var(--v-9); align-items: start; }
+  .prices__seg { color: var(--v-ink); font-weight: 500; }
+  .prices__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-7); }
+  .plist h3 { margin-bottom: var(--v-3); color: var(--v-accent); }
+  .plist li { display: grid; grid-template-columns: 1fr auto; gap: var(--v-1) var(--v-5); padding: var(--v-4) 0; border-top: 1px solid var(--v-hair); align-items: baseline; }
+  .plist li:last-child { border-bottom: 1px solid var(--v-hair); }
+  .plist .name { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); letter-spacing: var(--v-track-normal); line-height: 1.15; }
+  .plist .note { grid-column: 1; font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 36ch; }
+  .plist .price { grid-column: 2; grid-row: 1 / span 2; align-self: start; font-weight: 600; font-size: var(--v-t-base); color: var(--v-accent); white-space: nowrap; }
+  .prices__incl { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 62ch; }
+  .prices__incl b { color: var(--v-ink); font-weight: 600; }
+  .prices__fig { position: sticky; top: clamp(5rem, 12vh, 7rem); aspect-ratio: 3 / 4; border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2), var(--v-edge); }
+  .prices__fig img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 1100px) { .prices__cols { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) {
+    .prices { grid-template-columns: 1fr; gap: var(--v-7); }
+    .prices__fig { position: static; aspect-ratio: 4 / 3; }
+    .plist .name { font-size: var(--v-t-base); }
+  }
+
+  /* ---- гарантия: фото со шторкой и факты ---------------------------------------- */
+  .promise { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-8); align-items: center; }
+  .promise__facts li { padding: var(--v-5) 0; border-top: 1px solid var(--v-hair); display: grid; gap: var(--v-1); }
+  .promise__facts li:last-child { border-bottom: 1px solid var(--v-hair); }
+  .promise__facts strong { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); letter-spacing: var(--v-track-normal); line-height: 1.15; }
+  .promise__facts span { color: var(--v-ink-soft); font-size: var(--v-t-sm); max-width: 46ch; }
+  .promise__fig { position: relative; border-radius: var(--v-radius); overflow: hidden; aspect-ratio: 16 / 11; box-shadow: var(--v-e2), var(--v-edge); }
+  .promise__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .promise__fig figcaption { position: absolute; left: var(--v-5); right: var(--v-5); bottom: var(--v-5); z-index: 1; font-size: var(--v-t-sm); color: var(--v-ink); }
+  .promise__fig::after { content: ""; position: absolute; inset: auto 0 0 0; height: 50%; background: linear-gradient(to top, rgb(0 0 0 / .8), rgb(0 0 0 / .3) 50%, transparent); pointer-events: none; }
+  @media (max-width: 860px) { .promise { grid-template-columns: 1fr; gap: var(--v-6); } .promise__fig { aspect-ratio: 4 / 3; } }
+
+  /* ---- финал: одно сообщение ------------------------------------------------------ */
+  .close { min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding: clamp(6rem, 14vh, 9rem) var(--v-gutter) 4.5rem;
+    background: radial-gradient(60rem 40rem at calc(var(--v-mx, .5) * 100%) calc(var(--v-my, .5) * 100%), rgb(240 122 31 / .2), transparent 60%); }
+  .close__inner { align-self: center; display: grid; grid-template-columns: 1.25fr .75fr; gap: var(--v-9); align-items: start; padding-bottom: var(--v-9); }
+  .close__inner .v-display { margin-bottom: var(--v-5); }
+  .close__inner .v-lede { max-width: 40ch; }
+  .close__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-4) var(--v-6); margin-top: var(--v-6); }
+  .close__tel { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-xl); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: var(--v-ink); letter-spacing: .01em; }
+  .close__hint { margin-top: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 44ch; }
+  .close__meta { display: grid; gap: var(--v-3); color: var(--v-ink-soft); padding-top: var(--v-2); }
+  .close__meta b { color: var(--v-ink); font-weight: 600; display: block; font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; margin-bottom: .2em; }
+  .foot { display: flex; justify-content: space-between; gap: var(--v-4); padding: var(--v-6) 0 0; border-top: 1px solid var(--v-hair); font-size: var(--v-t-xs); color: var(--v-ink-soft); flex-wrap: wrap; }
+  @media (max-width: 860px) {
+    .close { min-height: 0; padding: clamp(5rem, 12vh, 7rem) var(--v-gutter) calc(6rem + env(safe-area-inset-bottom)); }
+    .close__inner { grid-template-columns: 1fr; gap: var(--v-7); padding-bottom: var(--v-8); }
+    .close__tel { font-size: var(--v-t-lg); }
+    .foot__more { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="v-page">
+  <span data-v-progress></span>
+  <div class="v-grain" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="bar__mark" href="#top"><i aria-hidden="true"></i><span class="bar__name">სანტექნიკი და ელექტრიკი <span class="bar__tag">სასწრაფოდ თქვენთან!</span></span></a>
+    <nav class="bar__right" aria-label="სწრაფი ბმულები">
+      <a class="bar__lang" href="index.html" lang="ru">Русский</a>
+      <a class="bar__tel" href="tel:{{телефон}}">{{телефон}}</a>
+      <a class="v-btn" href="{{ссылка-записи}}" rel="noopener">გამოძახება</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 1 · УЗНАВАНИЕ: диптих «вода | электрика» -->
+    <section id="top" data-v-act="pin" data-v-span="2.6" data-v-drift="#1c1f23" aria-label="სანტექნიკი და ელექტრიკი თქვენს სახლში">
+      <div data-v-stage>
+        <div class="v-layer hero__half hero__half--voda">
+          <picture>
+            <source media="(max-width: 860px)" srcset="assets/hero-voda-m.webp" width="640" height="1138">
+            <img src="assets/hero-voda.webp" alt="სანტექნიკი ამწყვიდებს დიოდ ნიჟარის ქვეშ, წყალი ბაზანში ჩანდება" width="1280" height="1280" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="v-layer hero__half hero__half--svet">
+          <picture>
+            <source media="(max-width: 860px)" srcset="assets/hero-svet-m.webp" width="640" height="1138">
+            <img src="assets/hero-svet.webp" alt="ელექტრიკი იხსნის დამწვარ როზეტს, ფონ ტაიფის ზედა ნაწილზე კვამლის კვალია" width="1280" height="1280" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero__seam" aria-hidden="true"></div>
+        <div class="hero__floor" aria-hidden="true"></div>
+        <div class="v-scrim v-scrim--lead" aria-hidden="true"></div>
+
+        <b class="hero__ask hero__ask--voda" data-v-kinetic="words" data-v-cue="0 0.48 0 0.05">დიოდება?</b>
+        <b class="hero__ask hero__ask--svet" data-v-kinetic="words" data-v-cue="0 1 0 0">ნაპერწკლავს?</b>
+
+        <div class="hero__note" data-v-cue="0 1 0 0" data-v-rise="0">
+          <span class="v-label">ვიღებთ გამოძახებებს</span>
+          <span class="v-nums">{{часы}}</span>
+          <span class="hero__int">ჩამოსვლის ინტერვალი {{время-выезда}}</span>
+        </div>
+
+        <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 1 0 0">
+          <span class="v-label hero__label">დიოდი, შემრევი, უნიტაზი, როზეტი, ავტომატი · გამოძახება სახლში</span>
+          <h1 class="v-display v-display--xl" data-v-kinetic="lines">{{город}}-ში სანტექნიკი გვერდით: ჩამოსვლის ინტერვალი და ფასი მაშინვე</h1>
+          <p class="v-lede">დარეკეთ ან დაგვიწერეთ: ტიპური სამუშაოს ინტერვალსა და ფასს გეტყვით ჩამოსვლამდე, მოვალთ სტანდარტული დეტალებით.</p>
+          <div class="hero__cta">
+            <a class="v-btn" href="{{ссылка-записи}}" rel="noopener">მასტერის გამოძახება</a>
+            <a class="hero__tel" href="tel:{{телефон}}">ან დარეკეთ <b>{{телефон}}</b></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ЦЕНА БЕЗДЕЙСТВИЯ и ПОВОРОТ -->
+    <section class="v-section v-section--tight" data-v-act="flow" data-v-drift="#20242a" id="poka" aria-label="რატომ არ ღირს ხვალამდე ლოდინი">
+      <div class="v-wrap poka">
+        <div class="v-stack" data-v-in data-v-stagger="70">
+          <span class="v-label">სანამ «მასტერი ხვალ, სადილის შემდეგ მოვა»</span>
+          <h2 class="v-display v-display--lg">დიოდი ხვალამდე არ დაელოდება</h2>
+          <ul class="rows">
+            <li><h3>წყალი სტიაშკაში მიდის</h3><p>ღამეში ის ქვემოდან მეზობლებთან იპოვის გზას. მაშინ ეს უკვე არ არის ნახევარსაათიანი სიფონი, არამედ სხვისი ჭერი და მათთან თქვენი საუბარი.</p></li>
+            <li><h3>როზეტი ცხელდება და სუნი ასდის</h3><p>ცუდი კონტაქტი თავისით არ ქრება. სანამ მასტერს დაელოდებით, გამორთეთ ამ ხაზის ავტომატი და ნუ ჩართავთ მასში დატვირთვას.</p></li>
+            <li><h3>ფასს «სამუშაოს შემდეგ გაიგებთ»</h3><p>როცა შემრევი უკვე დაშლილია, თანხაზე დავა გვიანია. თვენსავით ეთანხმებით ნებისმიერს, მხოლოდ რომ უკან შეკრან.</p></li>
+          </ul>
+          <div class="turn">
+            <span class="v-label">ამიტომ</span>
+            <p class="turn__text">ჩამოსვლის ინტერვალსა და ტიპური სამუშაოს ფასს ვეუბნებით ჩამოსვლამდე, აღწერისა და ფოტოთი. სტანდარტული დეტალები ჩვენთან არის.</p>
+          </div>
+        </div>
+        <figure class="poka__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.42">
+          <img src="assets/stain.webp" srcset="assets/stain-900.webp 900w, assets/stain.webp 1600w" sizes="(max-width: 860px) 100vw, 40vw" alt="წყალი სააბაზანოს კარის ქვემოთ დერეფნის იატაკზე გავრცელდა, ბაქნის პირას შეხვეული პირსახოცია" width="1600" height="900" loading="lazy" decoding="async">
+          <figcaption>დილით ეს იატაკი მეზობლის ჭერზე იქნება</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3 · ДОКАЗАТЕЛЬСТВО: как проходит вызов, четыре статуса -->
+    <section data-v-act="pin" data-v-span="2.6" data-v-drift="#181b1f" id="kak" aria-label="როგორ მიდის გამოძახება">
+      <div data-v-stage>
+        <div class="v-layer steps__img">
+          <img src="assets/work.webp" alt="" width="1920" height="1067" loading="lazy" decoding="async">
+        </div>
+        <div class="v-scrim v-scrim--lead" aria-hidden="true"></div>
+        <div class="v-copy v-copy--lead steps__copy" data-v-cue="0 0.3 0 0.05">
+          <span class="chip"><i aria-hidden="true"></i>სტატუსი · ინტერვალი და ფასი</span>
+          <h2 class="v-display v-display--lg">თქვენ დაწერეთ, რომ დიოდება. ჩვენ უპასუხეთ ინტერვალითა და ფასით</h2>
+          <p class="v-lede">ორი სტრიქონი და ფოტო საკმარისია. ჩამოსვლის ინტერვალი {{время-выезда}}, ფასი ქვემოთ პრაისით, და ადგილზე ის არ იცვლება.</p>
+        </div>
+        <div class="v-copy v-copy--lead steps__copy" data-v-cue="0.28 0.72 0.05 0.05">
+          <span class="chip"><i aria-hidden="true"></i>სტატუსი · მასტერი გამოვიდა</span>
+          <h2 class="v-display v-display--lg">მასტერი სტანდარტული დეტალებით გამოვიდა</h2>
+          <p class="v-lede">გიბკები, სიფონები, კრანები, ავტომატები და როზეტები უკვე ჩანთაშია, რომ მათთვის ორჯერ არ იმგზავროს.</p>
+        </div>
+        <div class="v-copy v-copy--lead steps__copy" data-v-cue="0.7 1 0.05 0">
+          <span class="chip"><i aria-hidden="true"></i>სტატუსი · ადგილზე</span>
+          <h2 class="v-display v-display--lg">დაათვალიერა, დაადასტურა ფასი დაწყებამდე, გააკეთა. გარანტია აქტშია</h2>
+          <p class="v-lede">თუ ადგილზე რაღაც კიდევ გამოჩნდა, სამუშაოს დაწყებამდე გეტყვით და გკითხავთ, გავაკეთოთ თუ არა.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · ВЫБОР: типовые работы и цены -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#1c1f23" id="ceny" aria-label="ფასები ტიპურ სამუშაოებზე">
+      <div class="v-wrap prices">
+        <div class="v-stack" data-v-in data-v-stagger="60">
+          <h2 class="v-display v-display--lg">ტიპური სამუშაოების ფასი ჩამოსვლამდე ცნობილია</h2>
+          <p class="v-body v-soft">ფასები მუშაობაზე, დეტალების ღირებულების გარეშე. ზუსტ თანხას ასახელებთ აღწერისა და ფოტოთი ჩამოსვლამდე, ადგილზე ის არ იცვლება. <span class="prices__seg">გამოვდივართ: {{зона-выезда}}.</span></p>
+          <div class="prices__cols">
+            <div class="plist">
+              <h3 class="v-label">სანტექნიკა</h3>
+              <ul>
+                <li><span class="name">დიოდის აღმოფხვრა ნიჟარის ქვეშ</span><span class="note">სიფონი, მოქნილი შლანგი, სალიკვიდაციო რგოლები</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">შემრევის შეცვლა</span><span class="note">სამზარეულო ან აბაზანა, თქვენი ან სტანდარტული ნაკრებიდან</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">ბაკის ან უნიტაზის არმატურის შეცვლა</span><span class="note">არ ივსება, ჩამოიწურება, წყალს არ ინახავს</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">სარეცხი ან ჭურჭლისსარეცხი მანქანის მიერთება</span><span class="note">წყალი, ჩამოსასხმელი, შემოწმება დატვირთვით</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">სტოიკაზე კრანის შეცვლა</span><span class="note">სტოიკის გათიშვას ვათანხმებთ მმართველ კომპანიასთან</span><span class="price v-nums">ზუსტდება</span></li>
+              </ul>
+            </div>
+            <div class="plist">
+              <h3 class="v-label">ელექტროობა</h3>
+              <ul>
+                <li><span class="name">როზეტის ან გამომრთველის შეცვლა</span><span class="note">ცხელდება, ნაპერწკლებს, კედელში ირხევა</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">ფარის ავტომატის შეცვლა</span><span class="note">ან დიფავტომატი; ნომინალი ხაზის მიხედვით ვირჩევთ</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">ვიპოვოთ, რატომ თიშავს ავტომატი</span><span class="note">ხაზის შემოწმება, მოკლე ჩართვის ან დენის გაჟონვის ძებნა</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">ლუსტრის ან სანათის ჩამოკიდება</span><span class="note">შეკრებითა და მიერთებით</span><span class="price v-nums">ზუსტდება</span></li>
+                <li><span class="name">როზეტის გადატანა ან დამატება</span><span class="note">ფასი წერტილზე, კედლის ღარების გაჭრა ცალკე</span><span class="price v-nums">ზუსტდება</span></li>
+              </ul>
+            </div>
+          </div>
+          <p class="prices__incl"><b>გამოძახება და დათვალიერება – ზუსტდება.</b> თუ სამუშაოს ვაკეთებთ, მის ღირებულებაში ჩაითვლება. არასტანდარტულ სამუშაოს ვაფასებთ ადგილზე დაწყებამდე და ვაკეთებთ მხოლოდ თქვენი თანხმობით.</p>
+        </div>
+        <figure class="prices__fig">
+          <img src="assets/bag.webp" srcset="assets/bag-800.webp 800w, assets/bag.webp 1200w" sizes="(max-width: 860px) 100vw, 30vw" alt="გახსნილი ჩანთა: მოქნილი შლანგი, სიფონი, შაბიანი კრანი, ავტომატები, როზეტი, გასაღები" width="1200" height="1600" loading="lazy" decoding="async">
+          <figcaption>ჩანთაში სტანდარტული დეტალებია: შლანგი, სიფონი, კრანი, ავტომატები, როზეტი</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 5 · ОБЕЩАНИЕ: гарантия и что с собой -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#20242a" id="garantiya" aria-label="რას ვპირდებით წერილობით">
+      <div class="v-wrap promise">
+        <figure class="promise__fig" data-v-reveal="left" data-v-reveal-at="0.15 0.5">
+          <img src="assets/done.webp" srcset="assets/done-900.webp 900w, assets/done.webp 1600w" sizes="(max-width: 860px) 100vw, 46vw" alt="ახალი შემრევი სუფთა ნიჟარაზე, ქვემოთი კარადა მშრალია, ძველი შემრევი ტრაპეზზე პირსახოცზე ეწყვის" width="1600" height="900" loading="lazy" decoding="async">
+          <figcaption>ძველ შემრევს თან წავიღებთ, ნიჟარას გავწმენდთ</figcaption>
+        </figure>
+        <div class="v-stack" data-v-in data-v-stagger="70">
+          <h2 class="v-display v-display--md">რას ვპირდებით წერილობით</h2>
+          <ul class="promise__facts">
+            <li><strong>ფასი სამუშაოს დაწყების შემდეგ არ იცვლება</strong><span>ჩამოსვლამდე ნათქვამი თანხა საბოლოოა. რაღაც კიდეც თუ აღმოჩნდა – სამუშაოს დაწყებამდე გეტყვით და გკითხავთ, გავაკეთოთ თუ არა.</span></li>
+            <li><strong>სტანდარტული დეტალები თან გვაქვს</strong><span>გიბკები, სიფონები, შაბიანი კრანები, ავტომატები, როზეტები და გამომრთველები. საჭირო დეტალი არ არის – მოვიტანთ, ფასს დაყენებამდე ვათანხმებთ.</span></li>
+            <li><strong>გარანტია სამუშაოზე {{гарантия}}</strong><span>ვადა ჩაიწერება აქტში. თუ ისევ დიოდება ან ჩვენი ბრალით გაითიშა – ჩამოვალთ და უფასოდ გავაკეთებთ.</span></li>
+            <li><strong>ჩვენ შემდეგ მშრალად და სუფთად</strong><span>ძველ დეტალებს ვწავლით, წყალს ვწმენდთ, შეფუთვას არ ვტოვებთ.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · ДЕЙСТВИЕ: одно сообщение с фото -->
+    <section data-v-act="flow" data-v-drift="#1c1f23" id="vyzov" aria-label="მასტერის გამოძახება">
+      <div class="close" data-v-spotlight>
+        <div class="close__inner">
+          <div data-v-in data-v-stagger="80">
+            <h2 class="v-display v-display--lg">დაწერეთ, რა მოხდა, და მიამაგრეთ ფოტო</h2>
+            <p class="v-lede">უპასუხებთ ჩამოსვლის ინტერვალითა და ტიპური სამუშაოს ფასით. ერთი შეტყობინება – და გამოძახება მუშაობს.</p>
+            <div class="close__cta">
+              <a class="v-btn" href="{{ссылка-записи}}" rel="noopener" data-v-magnet="0.22">მასტერის გამოძახება</a>
+              <a class="close__tel" href="tel:{{телефон}}">{{телефон}}</a>
+            </div>
+            <p class="close__hint">მესენჯერში ვპასუხობთ გამოძახებების მიღების საათებში. თუ წერა არ გიყვართ – დარეკეთ, ინტერვალსა და ფასს ტელეფონით გეტყვით.</p>
+          </div>
+          <div class="close__meta" data-v-in data-v-stagger="60">
+            <span><b>ვიღებთ გამოძახებებს</b>{{часы}}</span>
+            <span><b>ჩამოსვლის ინტერვალი</b>{{время-выезда}}</span>
+            <span><b>გამოვდივართ</b>{{зона-выезда}}</span>
+            <span data-slot-optional><b>მისამართი</b>{{адрес}}, {{город}}</span>
+          </div>
+        </div>
+        <footer class="foot">
+          <span>სანტექნიკი და ელექტრიკი: სასწრაფოდ თქვენთან! · {{город}}</span>
+          <span data-slot-optional>{{юрлицо}} · საიდენტ. ნომერი {{ИНН}}</span>
+          <span class="foot__more">სანტექნიკი და ელექტრიკი თქვენს სახლში: დიოდები, შემრევები, უნიტაზები, როზეტები, ავტომატები</span>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Фирменный ход: трекер вызова «სად არის მასტერი» -->
+  <aside class="track" id="track" aria-label="გამოძახების სტატუსი">
+    <div class="track__status">
+      <span class="v-label">სად არის ახლა მასტერი</span>
+      <b class="track__state" aria-live="polite">ველოდებით თქვენს გამოძახებას</b>
+    </div>
+    <div class="track__line" aria-hidden="true">
+      <div class="track__rail"><i></i></div>
+      <ol class="track__stops">
+        <li><span>გამოძახება</span></li>
+        <li><span>ინტერვალი და ფასი</span></li>
+        <li><span>გამოვიდა</span></li>
+        <li><span>ადგილზე</span></li>
+        <li><span>შესრულდა</span></li>
+      </ol>
+      <span class="track__marker"></span>
+    </div>
+    <a class="v-btn track__btn" href="{{ссылка-записи}}" rel="noopener">გამოძახება</a>
+  </aside>
+</div>
+
+<script src="vibe.js"></script>
+<script>
+  if (window.matchMedia('(max-width: 860px)').matches) {
+    document.getElementById('top').setAttribute('data-v-span', '1.8');
+    document.querySelector('#top .hero__copy').setAttribute('data-v-cue', '0 1 0 0');
+    document.getElementById('kak').setAttribute('data-v-span', '2.2');
+  }
+  Vibe.mount(document.querySelector('.v-page'));
+
+  (function () {
+    var bar = document.querySelector('.bar'), on = null;
+    function tick() { var s = window.scrollY > 40; if (s !== on) { on = s; bar.classList.toggle('is-scrolled', s); } }
+    window.addEventListener('scroll', tick, { passive: true }); tick();
+  })();
+
+  (function () {
+    var page = document.querySelector('.v-page'), track = document.getElementById('track'), line = track.querySelector('.track__line');
+    var stateEl = track.querySelector('.track__state'), stops = track.querySelectorAll('.track__stops li');
+    var states = ['ველოდებით თქვენს გამოძახებას', 'ინტერვალი და ფასი ნათქვამია', 'მასტერი გამოვიდა', 'ადგილზე: ფასი დაწყებამდე', 'შესრულდა, გარანტია აქტში'];
+    var map = [['top', 0, 1], ['poka', 1, 1], ['kak', 1, 3], ['ceny', 3, 3], ['garantiya', 3, 4], ['otzyvy', 4, 4], ['vyzov', 4, 4]];
+    var acts = [];
+    map.forEach(function (m) { var el = document.getElementById(m[0]); if (el) acts.push({ el: el, a: m[1], b: m[2], pin: el.getAttribute('data-v-act') === 'pin' }); });
+    var heroBtn = document.querySelector('#top .hero__cta .v-btn'), fin = document.getElementById('vyzov');
+    var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
+    var pv = function (el) { return parseFloat(getComputedStyle(el).getPropertyValue('--v-p')) || 0; };
+    var lastTp = -1, lastN = -1, lastS = -1, lastHid = null, raf = null, swap = null;
+    function tick() {
+      raf = null;
+      var y = window.scrollY, vh = window.innerHeight, mid = y + vh * 0.5, cur = acts[0];
+      for (var i = 0; i < acts.length; i++) if (acts[i].el.offsetTop <= mid) cur = acts[i];
+      var p = cur.pin ? pv(cur.el) : clamp((mid - cur.el.offsetTop) / Math.max(cur.el.offsetHeight, 1), 0, 1);
+      var pos = cur.a + (cur.b - cur.a) * p;
+      var tp = Math.round(pos / (stops.length - 1) * 1000) / 1000;
+      if (tp !== lastTp) { lastTp = tp; line.style.setProperty('--tp', tp); }
+      var n = Math.floor(pos + 0.02);
+      if (n !== lastN) { lastN = n; stops.forEach(function (s, i) { s.classList.toggle('is-past', i <= n); }); }
+      var s = Math.round(pos);
+      if (s !== lastS) {
+        lastS = s; clearTimeout(swap);
+        stateEl.classList.add('is-swap');
+        swap = setTimeout(function () { stateEl.textContent = states[s]; stateEl.classList.remove('is-swap'); }, 100);
+      }
+      var hid = heroBtn.getBoundingClientRect().bottom > 0 || (fin && fin.getBoundingClientRect().top < vh * 0.55);
+      if (hid !== lastHid) { lastHid = hid; track.classList.toggle('is-hidden', hid); page.classList.toggle('track-on', !hid); }
+    }
+    var ask = function () { if (!raf) raf = requestAnimationFrame(tick); };
+    window.addEventListener('scroll', ask, { passive: true });
+    window.addEventListener('resize', ask);
+    window.addEventListener('load', ask);
+    tick();
+  })();
+</script>
+</body>
+</html>
