@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЛЕЗВИЕ — барбершоп</title>
+<style>
+  :root{
+    --bg:#131110; --panel:#1c1917; --line:#332c28;
+    --gold:#c9a25e; --gold-bright:#e3c07f;
+    --text:#efe9e0; --muted:#a79c8d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Segoe UI',system-ui,sans-serif;
+    background:var(--bg);color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:1200px;margin:0 auto;padding:0 24px}
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:24px 0;gap:16px;flex-wrap:wrap;
+  }
+  .logo{font-size:22px;font-weight:800;letter-spacing:.34em;text-transform:uppercase}
+  .logo b{color:var(--gold)}
+  nav{display:flex;gap:30px;font-size:13px;letter-spacing:.16em}
+  nav a{color:var(--muted);text-decoration:none;text-transform:uppercase}
+  nav a:hover{color:var(--gold-bright)}
+  .phone{
+    font-size:14px;letter-spacing:.06em;color:var(--text);
+    text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;
+  }
+  .hero{
+    position:relative;margin-top:8px;border-radius:4px;overflow:hidden;
+    min-height:580px;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:#000 url('hero.jpg') center/cover no-repeat;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 90% 80% at 50% 55%,rgba(10,8,7,.25) 0%,rgba(10,8,7,.88) 100%);
+  }
+  .hero__inner{position:relative;max-width:680px;padding:64px 32px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.4em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:24px;
+  }
+  .eyebrow::before,.eyebrow::after{content:'—';margin:0 14px;color:var(--line)}
+  h1{
+    font-size:clamp(38px,5.4vw,66px);line-height:1.02;font-weight:800;
+    letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;
+  }
+  h1 em{font-style:normal;color:var(--gold-bright)}
+  .lead{font-size:17px;line-height:1.6;color:var(--muted);margin:0 auto 36px;max-width:480px}
+  .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+  .btn{
+    font-size:13px;font-weight:700;padding:16px 38px;text-decoration:none;
+    letter-spacing:.22em;text-transform:uppercase;transition:.25s;
+  }
+  .btn--fill{background:var(--gold);color:#14110e}
+  .btn--fill:hover{background:var(--gold-bright);transform:translateY(-2px)}
+  .btn--ghost{border:1px solid var(--line);color:var(--text)}
+  .btn--ghost:hover{border-color:var(--gold);color:var(--gold-bright)}
+  .meta{
+    display:flex;justify-content:center;gap:36px;flex-wrap:wrap;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  }
+  .meta b{color:var(--gold-bright)}
+  @media (max-width:760px){
+    nav{display:none}
+    header{justify-content:center;text-align:center}
+    .hero{min-height:540px}
+    .hero::before{background:radial-gradient(ellipse 100% 90% at 50% 50%,rgba(10,8,7,.35) 0%,rgba(10,8,7,.92) 100%)}
+    .hero__inner{padding:48px 22px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="logo">ЛЕ<b>З</b>ВИЕ</div>
+    <nav>
+      <a href="#">Услуги</a><a href="#">Барберы</a><a href="#">Цены</a><a href="#">Контакты</a>
+    </nav>
+    <a class="phone" href="tel:+78000000000">8 (800) 000-00-00</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="eyebrow">Мужские стрижки и бритьё</div>
+      <h1>Стрижка —<br>это <em>ритуал</em></h1>
+      <p class="lead">Горячее полотенце, опасная бритва и время, которое принадлежит только вам. Запишитесь — кофе или виски уже ждут.</p>
+      <div class="actions">
+        <a class="btn btn--fill" href="#">Записаться онлайн</a>
+        <a class="btn btn--ghost" href="#">Прайс</a>
+      </div>
+      <div class="meta">
+        <span>Ежедневно <b>10:00–21:00</b></span>
+        <span>ул. Центральная, <b>7</b></span>
+        <span>Свой <b>барбер</b></span>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
