@@ -115,6 +115,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 .s-board__name em { display: block; font-style: normal; font-size: .84rem; color: var(--c-ink-soft); font-weight: 400; }
 .s-board__dots { flex: 1; }
 .s-board__price { font: 700 1.1rem/1 var(--f-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 720px) { .s-board__price { white-space: normal; font-size: .95rem; text-align: right; } }
 .s-board__price small { font: 500 .78rem var(--f-text); color: var(--c-ink-soft); }
 
 .s-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 14px; }
