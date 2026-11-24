@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Юрий Викторов — сайты для малого бизнеса</title>
-<meta name="description" content="Лендинги для малого бизнеса: барбершопы, ателье, цветочные, мастера выездных услуг. Демо бесплатно, запуск за неделю.">
+<meta name="description" content="Лендинги для малого бизнеса: барбершопы, ателье, цветочные, мастера выездных услуг. Демо бесплатно, запуск за 5–7 дней.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,35 +22,45 @@
 
   /* шапка */
   .bar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--canvas) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  .bar__in { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 16px; flex-wrap: wrap; }
-  .brand { font-family: var(--f-display); font-weight: 600; font-size: 17px; text-decoration: none; color: var(--ink); }
+  .bar__in { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; flex-wrap: wrap; }
+  .brand { font-family: var(--f-display); font-weight: 600; font-size: 17px; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 10px; }
+  .brand .mono { width: 40px; height: 40px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); display: flex; align-items: center; justify-content: center; font-size: 15px; }
   .brand small { display: block; font-family: var(--f-text); font-weight: 400; font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
   .nav { display: flex; gap: 22px; align-items: center; }
   .nav a { color: var(--ink); text-decoration: none; font-size: 14.5px; font-weight: 500; }
   .nav a:hover { color: var(--ink-soft); }
-  .nav a.btn, .nav a.btn:hover { color: var(--accent-ink); }
   .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 12px 22px; border-radius: 10px; border: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
   .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(35,34,42,.18); }
   .btn--ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
   .btn--ghost:hover { box-shadow: none; background: var(--ink); color: var(--accent-ink); }
+  .nav a.btn, .nav a.btn:hover { color: var(--accent-ink); }
 
   /* герой */
-  .hero { padding: 84px 0 64px; }
+  .hero { padding: 80px 0 60px; }
   .hero .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 18px; }
-  .hero h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 52px); line-height: 1.12; max-width: 780px; letter-spacing: -.01em; }
-  .hero p.lead { margin-top: 20px; font-size: 18px; color: var(--ink-soft); max-width: 620px; }
+  .hero h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(32px, 5vw, 56px); line-height: 1.1; max-width: 760px; letter-spacing: -.01em; }
+  .hero p.lead { margin-top: 20px; font-size: 18px; color: var(--ink-soft); max-width: 640px; }
+  .chips { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 500; }
+  .chip b { font-weight: 700; }
   .hero__cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero__facts { margin-top: 44px; display: flex; gap: 36px; flex-wrap: wrap; }
-  .fact b { font-family: var(--f-display); font-size: 24px; display: block; }
-  .fact span { font-size: 13px; color: var(--ink-soft); }
 
   /* секции */
-  section { padding: 56px 0; }
-  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 30px; }
-  .sec-head h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 32px); font-weight: 600; }
-  .sec-head p { color: var(--ink-soft); max-width: 460px; font-size: 15px; }
+  section { padding: 54px 0; }
+  .sec-head { margin-bottom: 30px; }
+  .sec-head .kicker { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+  .sec-head h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 32px); font-weight: 600; margin-top: 8px; }
+  .sec-head p { color: var(--ink-soft); max-width: 560px; font-size: 15px; margin-top: 8px; }
+
+  /* зачем сайт */
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px 34px; }
+  .why-item { border-top: 2px solid var(--ink); padding-top: 14px; }
+  .why-item .num { font-family: var(--f-display); font-size: 14px; color: var(--ink-soft); }
+  .why-item h3 { font-size: 17px; margin: 6px 0 6px; }
+  .why-item p { font-size: 14.5px; color: var(--ink-soft); }
 
   /* работы */
+  .works-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .view-toggle { display: inline-flex; border: 1.5px solid var(--ink); border-radius: 999px; overflow: hidden; }
   .view-toggle button { border: none; background: transparent; padding: 9px 18px; font: 600 14px var(--f-text); color: var(--ink); cursor: pointer; }
   .view-toggle button.on { background: var(--ink); color: var(--accent-ink); }
@@ -65,12 +75,10 @@
   .phone-frame img.shot-phone { position: absolute; top: 0; left: 0; width: 100%; height: auto; max-width: none; animation: phoneScroll var(--dur, 16s) ease-in-out infinite alternate; will-change: transform; }
   .work:hover .phone-frame img.shot-phone { animation-play-state: paused; }
   @keyframes phoneScroll { from { transform: translateY(0); } to { transform: translateY(var(--shift, -400px)); } }
-  /* режим «Телефон»: только рамка на весь кадр */
   .works.view-phone { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
   .works.view-phone .work__shot { display: none; }
   .works.view-phone .work__phonebox { padding: 0; }
   .works.view-phone .phone-frame { width: 100%; max-width: none; border-radius: 38px; box-shadow: none; }
-  /* режим «Компьютер»: только десктопный скриншот */
   .works.view-desktop .work__phonebox { display: none; }
   .work__body { padding: 16px 20px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .work__body b { font-size: 16.5px; }
@@ -78,28 +86,60 @@
   .work__open { flex: none; font-size: 13px; font-weight: 600; border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 14px; }
   .work:hover .work__open { background: var(--ink); color: var(--accent-ink); }
   .badge { display: inline-block; margin-left: 8px; vertical-align: 2px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; background: var(--accent); color: var(--accent-ink); border-radius: 6px; padding: 2px 7px; }
-  .step-call { margin-top: 26px; }
-  .step-call .btn { text-decoration: none; }
 
-  /* услуги */
-  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
-  .service { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px 22px; }
-  .service h3 { font-family: var(--f-display); font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-  .service p { font-size: 14.5px; color: var(--ink-soft); }
-  .service .price { margin-top: 14px; font-weight: 600; font-size: 15px; }
-  .services-note { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+  /* подбор за минуту */
+  .quiz { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 30px; }
+  .quiz__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .quiz label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+  .quiz select { width: 100%; border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; font: 500 15px var(--f-text); background: #fff; color: var(--ink); }
+  .quiz__go { margin-top: 22px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .quiz__result { display: none; margin-top: 22px; border-top: 1px dashed var(--line); padding-top: 20px; }
+  .quiz__result.show { display: block; }
+  .quiz__result b.t { font-family: var(--f-display); font-size: 17px; }
+  .quiz__result p { color: var(--ink-soft); font-size: 14.5px; margin: 8px 0 14px; max-width: 640px; }
 
-  /* как работаю */
+  /* тарифы */
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; align-items: stretch; }
+  .plan { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; display: flex; flex-direction: column; }
+  .plan--hot { border: 2px solid var(--ink); }
+  .plan__flag { position: absolute; top: -13px; left: 22px; background: var(--accent); color: var(--accent-ink); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; padding: 4px 12px; border-radius: 999px; }
+  .plan h3 { font-family: var(--f-display); font-size: 16.5px; font-weight: 600; }
+  .plan .price { font-family: var(--f-display); font-size: 24px; margin: 12px 0 2px; }
+  .plan .term { font-size: 13px; color: var(--ink-soft); }
+  .plan ul { list-style: none; margin: 16px 0 20px; flex: 1; }
+  .plan li { font-size: 14.5px; padding: 6px 0 6px 26px; position: relative; color: var(--ink); }
+  .plan li::before { content: ""; position: absolute; left: 0; top: 11px; width: 14px; height: 8px; border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg); }
+  .plan .btn { text-align: center; }
+
+  /* шаги */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; counter-reset: step; }
   .step { border-top: 2px solid var(--ink); padding-top: 16px; }
   .step::before { counter-increment: step; content: "0" counter(step); font-family: var(--f-display); font-size: 14px; color: var(--ink-soft); }
   .step h3 { font-size: 16.5px; margin: 8px 0 6px; }
   .step p { font-size: 14px; color: var(--ink-soft); }
+  .step-call { margin-top: 26px; }
+  .step-call .btn { text-decoration: none; }
 
-  /* написать */
+  /* обо мне */
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; }
+  .about p { font-size: 15.5px; margin-bottom: 14px; color: var(--ink); }
+  .about .chips { margin-top: 18px; }
+  .about-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+  .about-card .mono { width: 56px; height: 56px; border-radius: 16px; background: var(--accent); color: var(--accent-ink); display: flex; align-items: center; justify-content: center; font-family: var(--f-display); font-size: 20px; margin-bottom: 14px; }
+  .about-card b { font-family: var(--f-display); font-size: 16px; }
+  .about-card p { font-size: 14px; color: var(--ink-soft); margin: 6px 0 0; }
+
+  /* вопросы */
+  .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 22px; font-weight: 600; font-size: 15.5px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .faq summary::after { content: "+"; font-family: var(--f-display); font-size: 18px; color: var(--ink-soft); transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding: 0 22px 18px; color: var(--ink-soft); font-size: 14.5px; max-width: 720px; }
+
+  /* контакты */
   .contact { background: var(--accent); color: var(--accent-ink); border-radius: 22px; padding: 48px 44px; }
   .contact h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 32px); font-weight: 600; max-width: 560px; }
-  .contact p { margin-top: 14px; color: #cfc9bd; max-width: 520px; font-size: 15.5px; }
+  .contact p { margin-top: 14px; color: #cfc9bd; max-width: 540px; font-size: 15.5px; }
   .contact__row { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
   .contact .btn { background: var(--accent-ink); color: var(--ink); }
   .contact .btn--ghost { background: transparent; color: var(--accent-ink); border-color: var(--accent-ink); }
@@ -107,7 +147,8 @@
 
   footer { padding: 30px 0 44px; color: var(--ink-soft); font-size: 13.5px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
 
-  @media (max-width: 640px) {
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; }
     .hero { padding: 54px 0 40px; }
     .nav a:not(.btn) { display: none; }
     .contact { padding: 34px 26px; }
@@ -118,12 +159,14 @@
 
 <header class="bar">
   <div class="wrap bar__in">
-    <a class="brand" href="#top">Юрий Викторов<small>сайты для малого бизнеса</small></a>
+    <a class="brand" href="#top"><span class="mono">ЮВ</span><span>Юрий Викторов<small>сайты для малого бизнеса</small></span></a>
     <nav class="nav">
       <a href="#works">Работы</a>
-      <a href="#services">Услуги и цены</a>
+      <a href="#plans">Тарифы</a>
       <a href="#process">Как работаю</a>
-      <a class="btn" href="#contact">Написать</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contact">Контакты</a>
+      <a class="btn" href="#contact">Обсудить проект</a>
     </nav>
   </div>
 </header>
@@ -131,24 +174,43 @@
 <div class="wrap" id="top">
 
   <section class="hero">
-    <p class="kicker">Работаю по всей России · удалённо</p>
-    <h1>Сайты, которые приводят клиентов мастерам и локальному бизнесу</h1>
-    <p class="lead">Делаю лендинги для барбершопов, ателье, цветочных магазинов и выездных служб. Покажу демо вашего будущего сайта до договора — бесплатно.</p>
-    <div class="hero__cta">
-      <a class="btn" href="#contact">Показать демо моего сайта</a>
-      <a class="btn btn--ghost" href="#works">Смотреть работы</a>
+    <p class="kicker">Сайты для малого бизнеса и частных специалистов</p>
+    <h1>Сайт, который приводит клиентов</h1>
+    <p class="lead">Сначала разбираюсь, как устроена ваша работа. Потом собираю демо вашего сайта – вы смотрите результат, а решение принимаете после.</p>
+    <div class="chips">
+      <span class="chip">Стоимость <b>от 15 000 ₽</b></span>
+      <span class="chip">Срок <b>5–7 дней</b></span>
+      <span class="chip"><b>2 круга правок</b></span>
     </div>
-    <div class="hero__facts">
-      <div class="fact"><b>7+</b><span>ниш в портфолио</span></div>
-      <div class="fact"><b>5 дней</b><span>средний срок лендинга</span></div>
-      <div class="fact"><b>0 ₽</b><span>за демо до старта работ</span></div>
+    <div class="hero__cta">
+      <a class="btn" href="#works">Смотреть работы</a>
+      <a class="btn btn--ghost" href="#contact">Обсудить проект</a>
+      <a class="btn btn--ghost" id="bot-btn" href="#" target="_blank" rel="noopener">Мой бот-помощник</a>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="sec-head">
+      <p class="kicker">Зачем бизнесу сайт</p>
+      <h2>Что сайт делает для вашего бизнеса</h2>
+    </div>
+    <div class="why">
+      <div class="why-item"><span class="num">01</span><h3>Показать услуги, цены и работы</h3><p>Человек сразу видит, что вы делаете и сколько это стоит, и не пишет «а почём?».</p></div>
+      <div class="why-item"><span class="num">02</span><h3>Вызвать доверие</h3><p>Свой сайт с отзывами и фото выглядит надёжнее, чем одна карточка на карте.</p></div>
+      <div class="why-item"><span class="num">03</span><h3>Отвечать на вопросы без вас</h3><p>Частые вопросы, условия и адрес лежат на странице, а не в вашей голове.</p></div>
+      <div class="why-item"><span class="num">04</span><h3>Принимать заявки</h3><p>Кнопка ведёт в ваш мессенджер с готовым сообщением: клиенту достаточно нажать «отправить».</p></div>
+      <div class="why-item"><span class="num">05</span><h3>Быть на виду</h3><p>Перед звонком или визитом многие смотрят в интернете. Ваша страница встречает их первой.</p></div>
+      <div class="why-item"><span class="num">06</span><h3>Работать, пока вы заняты</h3><p>Страница отвечает клиенту ночью и в выходные, а заявка ждёт вас в мессенджере.</p></div>
     </div>
   </section>
 
   <section id="works">
-    <div class="sec-head">
-      <h2>Работы</h2>
-      <p>Живые демо — нажмите на карточку, чтобы открыть сайт и полистать его как клиент. В режиме «Телефон» сайты медленно прокручиваются в рамке смартфона.</p>
+    <div class="sec-head works-head-row">
+      <div>
+        <p class="kicker">Мои работы</p>
+        <h2>Откройте любую и посмотрите вживую</h2>
+        <p>В режиме «Телефон» сайты медленно прокручиваются в рамке смартфона.</p>
+      </div>
       <span class="view-toggle" role="group" aria-label="Вид превью">
         <button type="button" class="on" data-view="duo">Все</button>
         <button type="button" data-view="desktop">Компьютер</button>
@@ -199,59 +261,174 @@
     </div>
   </section>
 
-  <section id="services">
+  <section id="quiz">
     <div class="sec-head">
-      <h2>Услуги и цены</h2>
-      <p>Точную цену назову, когда увижу задачу. Демо — бесплатно.</p>
+      <p class="kicker">Подбор за минуту</p>
+      <h2>Три вопроса – и я подскажу, что вам подойдёт</h2>
     </div>
-    <div class="services">
-      <div class="service">
-        <h3>Лендинг под ключ</h3>
-        <p>Структура, тексты, дизайн, онлайн-запись или форма заявки, публикация на вашем адресе.</p>
-        <p class="price">от 15 000 ₽</p>
+    <div class="quiz">
+      <div class="quiz__grid">
+        <div>
+          <label for="q1">1. Чем вы занимаетесь?</label>
+          <select id="q1">
+            <option>Услуги на дому (сантехник, электрик, клининг)</option>
+            <option>Красота и стиль (барбершоп, маникюр, ателье)</option>
+            <option>Торговля (цветы, кофе, товары)</option>
+            <option>Автосервис, шиномонтаж</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div>
+          <label for="q2">2. Что сайт должен делать в первую очередь?</label>
+          <select id="q2">
+            <option>Принимать заявки и записи</option>
+            <option>Показывать цены и работы</option>
+            <option>Заменить старый сайт или карточку на картах</option>
+            <option>Просто быть на виду в интернете</option>
+          </select>
+        </div>
+        <div>
+          <label for="q3">3. Где вам удобнее общаться?</label>
+          <select id="q3">
+            <option>WhatsApp</option>
+            <option>Telegram</option>
+            <option>Звонок</option>
+          </select>
+        </div>
       </div>
-      <div class="service">
-        <h3>Демо до договора</h3>
-        <p>Собираю первый экран вашего будущего сайта с вашими ценами и телефоном. Нравится — работаем дальше.</p>
-        <p class="price">0 ₽</p>
+      <div class="quiz__go">
+        <button class="btn" id="quiz-btn" type="button">Получить подбор</button>
       </div>
-      <div class="service">
-        <h3>Перенос на Тильду</h3>
-        <p>Знакомый вам конструктор: редактируете тексты и фото сами, я настраиваю и публикую.</p>
+      <div class="quiz__result" id="quiz-result">
+        <b class="t">Вам подойдёт: сайт-одностраничник — от 15 000 ₽</b>
+        <p id="quiz-text">Одна страница с услугами, ценами, отзывами и кнопкой заявки закрывает задачу. Демо соберу до разговора о цене — смотрите результат, а не обещания.</p>
+        <a class="btn" id="quiz-cta" href="#" target="_blank" rel="noopener">Обсудить в мессенджере</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="sec-head">
+      <p class="kicker">Тарифы</p>
+      <h2>Сколько это стоит: понятные цены</h2>
+      <p>Точную стоимость назову после разговора о задаче. «От» значит, что цена зависит от объёма.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Перенос на Тильду или домен</h3>
         <p class="price">от 8 000 ₽</p>
+        <p class="term">1–2 дня</p>
+        <ul>
+          <li>Перенесу готовый сайт в вашу Тильду</li>
+          <li>Или подключу ваш домен</li>
+          <li>Проверю, что всё открывается на телефоне и компьютере</li>
+        </ul>
+        <a class="btn btn--ghost plan-cta" href="#" data-plan="перенос на Тильду/домен">Обсудить перенос</a>
       </div>
-      <div class="service">
-        <h3>Правки и поддержка</h3>
-        <p>Меняю цены, фото, тексты, добавляю разделы. Отвечаю в день обращения.</p>
-        <p class="price">от 1 500 ₽ / правка</p>
+      <div class="plan plan--hot">
+        <span class="plan__flag">ЧАЩЕ ВСЕГО БЕРУТ</span>
+        <h3>Сайт-одностраничник</h3>
+        <p class="price">от 15 000 ₽</p>
+        <p class="term">5–7 дней · 2 круга правок</p>
+        <ul>
+          <li>Лендинг или визитка под ваш бизнес</li>
+          <li>Услуги, цены, отзывы и кнопки мессенджеров</li>
+          <li>Удобно и на телефоне, и на компьютере</li>
+          <li>Демо до разговора о цене</li>
+          <li>Публикация и ссылка для клиентов</li>
+        </ul>
+        <a class="btn plan-cta" href="#" data-plan="сайт-одностраничник">Обсудить сайт</a>
+      </div>
+      <div class="plan">
+        <h3>Доработки сайта</h3>
+        <p class="price">от 1 500 ₽</p>
+        <p class="term">1–2 дня</p>
+        <ul>
+          <li>Правки текстов, блоков и картинок</li>
+          <li>На уже готовом сайте, моём или чужом</li>
+          <li>Скажете словами, что поменять</li>
+        </ul>
+        <a class="btn btn--ghost plan-cta" href="#" data-plan="доработки сайта">Обсудить правки</a>
       </div>
     </div>
-    <p class="services-note">Срок лендинга — обычно 5–7 дней от брифа до публикации.</p>
   </section>
 
   <section id="process">
     <div class="sec-head">
-      <h2>Как работаю</h2>
-      <p>От демо до сайта на вашем адресе — четыре шага, без созвонов на час. Удобнее поговорить? Звоните.</p>
+      <p class="kicker">Как проходит работа</p>
+      <h2>От первого сообщения до готовой ссылки</h2>
+      <p>Удобнее поговорить? Звоните.</p>
     </div>
     <div class="steps">
-      <div class="step"><h3>Вы пишете</h3><p>Ниша, город, чем гордитесь. За час присылаю вопросы по делу.</p></div>
-      <div class="step"><h3>Я показываю демо</h3><p>Первый экран вашего сайта с вашим телефоном и ценами — 1–2 дня.</p></div>
-      <div class="step"><h3>Утверждаем и делаем</h3><p>Правки по пожеланиям входят. Показываю результат до публикации.</p></div>
-      <div class="step"><h3>Сайт в работе</h3><p>Публикация на вашем адресе или перенос на Тильду. Остаюсь на связи.</p></div>
+      <div class="step"><h3>Знакомимся</h3><p>Вы пишете мне в мессенджер и рассказываете о бизнесе: чем занимаетесь, кто ваши клиенты, что для них важно.</p></div>
+      <div class="step"><h3>Показываю демо</h3><p>Собираю демо вашего сайта до разговора о цене. Вы видите, как это будет выглядеть.</p></div>
+      <div class="step"><h3>Правим вместе</h3><p>Говорите словами, что поменять. В стоимость сайта входят 2 круга правок.</p></div>
+      <div class="step"><h3>Запускаем</h3><p>Публикую сайт и даю ссылку. При необходимости переношу в вашу Тильду или на ваш домен.</p></div>
     </div>
     <div class="step-call">
       <a class="btn" href="tel:+79153887226">Позвонить: +7 (915) 388-72-26</a>
     </div>
   </section>
 
+  <section id="about">
+    <div>
+      <div class="sec-head">
+        <p class="kicker">Кто делает сайт</p>
+        <h2>Меня зовут Юрий. Делаю сайты, с которых пишут</h2>
+      </div>
+      <p>Мои клиенты – барбершопы, ателье, цветочные магазины, автосервисы и другие небольшие бизнесы. Прежде чем что-то рисовать, я вникаю в ваше дело: за что вас выбирают и о чём клиенты спрашивают чаще всего.</p>
+      <p>Из этого собираю страницу, которую легко читать с телефона и на которой понятно, куда нажать, чтобы вам написать. Готовое демо покажу до разговора о цене, а все вопросы решаем лично со мной, без менеджеров.</p>
+      <div class="chips">
+        <span class="chip">Работаю онлайн по всей России</span>
+        <span class="chip">Демо до оплаты</span>
+        <span class="chip">Правки словами</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <span class="mono">ЮВ</span>
+      <b>Юрий Викторов</b>
+      <p>веб-мастер для малого бизнеса</p>
+      <p>Телефон: +7 (915) 388-72-26<br>Telegram: @Ury19081991</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sec-head">
+      <p class="kicker">Вопросы</p>
+      <h2>Частые вопросы и честные ответы</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Сколько стоит сайт?</summary>
+        <p>Сайт-одностраничник – от 15 000 ₽, перенос на Тильду или домен – от 8 000 ₽, доработки – от 1 500 ₽. Точную цену назову после разговора о вашей задаче.</p>
+      </details>
+      <details>
+        <summary>Как быстро будет готово?</summary>
+        <p>Одностраничный сайт – за 5–7 дней, перенос – 1–2 дня, доработки – 1–2 дня.</p>
+      </details>
+      <details>
+        <summary>Сколько правок входит?</summary>
+        <p>В стоимость сайта входят 2 круга правок. Вы говорите словами, что изменить, и я меняю.</p>
+      </details>
+      <details>
+        <summary>Что я увижу до оплаты?</summary>
+        <p>Демо вашего сайта. Я собираю его до разговора о цене, чтобы вы оценили результат, а не обещания.</p>
+      </details>
+      <details>
+        <summary>Вы работаете в моём городе?</summary>
+        <p>Работаю онлайн, поэтому город не важен: общаемся в Telegram, WhatsApp или по телефону.</p>
+      </details>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="contact">
-      <h2>Покажу демо вашего сайта</h2>
-      <p>Напишите нишу и город — через 1–2 дня пришлю первый экран вашего будущего сайта. Сообщение уже набрано, останется отправить.</p>
+      <h2>Напишите, чем вы занимаетесь – я соберу демо</h2>
+      <p>Напишите в любой удобный мессенджер, текст сообщения уже готов. Или позвоните: +7 (915) 388-72-26.</p>
       <div class="contact__row">
         <a class="btn" id="wa-btn" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a>
         <a class="btn btn--ghost" id="tg-btn" href="#" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" id="call-btn" href="tel:+79153887226">Позвонить</a>
       </div>
     </div>
   </section>
@@ -267,12 +444,16 @@
 (function () {
   document.getElementById('year').textContent = String(new Date().getFullYear());
   // Контакты
-  var WA_NUMBER = '79153887226';   // WhatsApp
-  var TG_NICK = 'Ury19081991';     // Telegram без @
-  var text = 'Здравствуйте, Юрий! Хочу сайт для своего бизнеса. Ниша: ____. Город: ____. Прошу показать демо.';
+  var WA_NUMBER = '79153887226';
+  var TG_NICK = 'Ury19081991';
+  var baseText = 'Здравствуйте, Юрий! Хочу сайт для своего бизнеса. Ниша: ____. Город: ____. Прошу показать демо.';
   var wa = document.getElementById('wa-btn'), tg = document.getElementById('tg-btn');
-  if (WA_NUMBER) wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
-  if (TG_NICK) tg.href = 'https://t.me/' + TG_NICK;
+  wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(baseText);
+  tg.href = 'https://t.me/' + TG_NICK;
+
+  // ссылка на бота-помощника (заполняется после создания бота)
+  var BOT_URL = ''; // например https://t.me/ImyaBot
+  if (BOT_URL) document.getElementById('bot-btn').href = BOT_URL;
 
   // переключатель «Все / Компьютер / Телефон»
   var grid = document.getElementById('worksGrid');
@@ -297,6 +478,28 @@
   });
   addEventListener('resize', layoutPhones);
   layoutPhones();
+
+  // подбор за минуту
+  var quizBtn = document.getElementById('quiz-btn');
+  quizBtn.addEventListener('click', function () {
+    var q1 = document.getElementById('q1').value;
+    var q2 = document.getElementById('q2').value;
+    var q3 = document.getElementById('q3').value;
+    var txt = 'Здравствуйте, Юрий! Прошу подобрать решение. Бизнес: ' + q1 + '. Задача сайта: ' + q2 + '. Удобнее общаться в: ' + q3 + '.';
+    var cta = document.getElementById('quiz-cta');
+    if (q3 === 'Telegram') { cta.href = 'https://t.me/' + TG_NICK; }
+    else if (q3 === 'Звонок') { cta.href = 'tel:+79153887226'; }
+    else { cta.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt); }
+    document.getElementById('quiz-result').classList.add('show');
+  });
+
+  // кнопки тарифов
+  document.querySelectorAll('.plan-cta').forEach(function (a) {
+    var plan = a.dataset.plan;
+    var txt = 'Здравствуйте, Юрий! Хочу обсудить: ' + plan + '. Ниша: ____. Город: ____.';
+    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt);
+    a.target = '_blank'; a.rel = 'noopener';
+  });
 })();
 </script>
 
