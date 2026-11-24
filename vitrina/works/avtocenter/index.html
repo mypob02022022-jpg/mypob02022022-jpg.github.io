@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автоцентр — 5 направлений под одной крышей</title>
+<style>
+  :root{
+    --bg:#121417; --panel:#1b1f24; --line:#2c323a;
+    --accent:#ff7a1a; --accent-dark:#e05f00;
+    --text:#e8eaed; --muted:#9aa3ad;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+  .page{max-width:1200px;margin:0 auto;padding:0 24px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;gap:16px;flex-wrap:wrap}
+  .logo{font-size:20px;font-weight:800;letter-spacing:.04em}
+  .logo span{color:var(--accent)}
+  nav{display:flex;gap:24px;font-size:14px}
+  nav a{color:var(--muted);text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  nav a:hover{color:var(--accent)}
+  .btn{font-size:15px;font-weight:700;padding:13px 28px;border-radius:8px;text-decoration:none;text-transform:uppercase;letter-spacing:.05em;transition:.2s;border:none;cursor:pointer}
+  .btn--fill{background:var(--accent);color:#16181b}
+  .btn--fill:hover{background:var(--accent-dark);color:#fff}
+  .hero{position:relative;margin-top:8px;border-radius:16px;overflow:hidden;min-height:520px;display:flex;align-items:center;background:#000 url('hero.jpg') center/cover no-repeat}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.94) 0%,rgba(12,13,15,.8) 45%,rgba(12,13,15,.3) 100%)}
+  .hero__inner{position:relative;max-width:600px;padding:56px}
+  .badge{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  h1{font-size:clamp(32px,4.4vw,52px);line-height:1.08;font-weight:800;margin-bottom:16px;text-transform:uppercase}
+  h1 span{color:var(--accent)}
+  .lead{font-size:17px;line-height:1.55;color:var(--muted);margin-bottom:28px;max-width:440px}
+  section{padding:52px 0 8px}
+  h2{font-size:30px;font-weight:800;text-transform:uppercase;margin-bottom:28px}
+  h2 span{color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;transition:.2s}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .card b{display:block;font-size:17px;margin:12px 0 8px}
+  .card p{font-size:14px;line-height:1.5;color:var(--muted)}
+  .num{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.1em}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .stat b{display:block;font-size:32px;font-weight:800;color:var(--accent)}
+  .stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .steps{counter-reset:s}
+  .step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-size:26px;font-weight:800;color:var(--accent);min-width:48px}
+  .step b{display:block;font-size:17px;margin-bottom:6px}
+  .step p{font-size:14px;color:var(--muted);line-height:1.5}
+  .faq details{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--panel)}
+  .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .faq summary::after{content:'+';font-size:22px;color:var(--accent);font-weight:400}
+  .faq details[open] summary::after{content:'−'}
+  .faq .a{padding:0 22px 18px;color:var(--muted);font-size:15px;line-height:1.55}
+  .cta{margin:48px 0 56px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  .cta h3{font-size:26px;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+  .cta p{color:var(--muted);line-height:1.55}
+  form{display:flex;flex-direction:column;gap:12px}
+  input,textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px;color:var(--text);font-size:15px;font-family:inherit}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  .demo-note{text-align:center;color:var(--muted);font-size:13px;padding:0 0 32px}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+  footer a{color:var(--text);text-decoration:none}
+  @media (max-width:860px){
+    nav{display:none}
+    .hero{min-height:480px}
+    .hero__inner{padding:40px 24px}
+    .cta{grid-template-columns:1fr;padding:28px 22px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="logo">АВТО<span>ЦЕНТР</span></div>
+    <nav>
+      <a href="#directions">Направления</a><a href="#why">Почему мы</a><a href="#faq">Вопросы</a><a href="#cta">Контакты</a>
+    </nav>
+    <a class="btn btn--fill" href="#cta">Оставить заявку</a>
+  </header>
+
+  <section class="hero" style="padding:0">
+    <div class="hero__inner">
+      <span class="badge">Демонстрационный прототип под задачу заказчика</span>
+      <h1>5 направлений.<br>Один <span>адрес</span></h1>
+      <p class="lead">Ремонт, обслуживание и оборудование автомобиля — всё в одном комплексе. Оставьте заявку, перезвоним за 15 минут.</p>
+      <a class="btn btn--fill" href="#cta">Записаться</a>
+    </div>
+  </section>
+
+  <section id="directions">
+    <h2>Наши <span>направления</span></h2>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><b>Кузовной ремонт</b><p>Покраска, рихтовка, удаление вмятин без покраски.</p></div>
+      <div class="card"><span class="num">02</span><b>Техническое обслуживание</b><p>Замена масла, фильтров, тормозных колодок, диагностика.</p></div>
+      <div class="card"><span class="num">03</span><b>Шиномонтаж</b><p>Балансировка, ремонт проколов, сезонная переобувка.</p></div>
+      <div class="card"><span class="num">04</span><b>Детейлинг</b><p>Полировка, керамика, химчистка салона.</p></div>
+      <div class="card"><span class="num">05</span><b>Автоэлектрика</b><p>Диагностика, ремонт проводки, установка оборудования.</p></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Почему <span>выбирают нас</span></h2>
+    <div class="stats">
+      <div class="stat card"><b>12 лет</b><span>на рынке</span></div>
+      <div class="stat card"><b>4 800+</b><span>авто обслужено</span></div>
+      <div class="stat card"><b>90 дней</b><span>гарантия на работы</span></div>
+      <div class="stat card"><b>15 мин</b><span>ответ на заявку</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Как мы <span>работаем</span></h2>
+    <div class="steps">
+      <div class="step"><div><b>Оставляете заявку</b><p>Опишите проблему — подскажем по срокам и цене до визита.</p></div></div>
+      <div class="step"><div><b>Приезжаете или эвакуируем</b><p>Если машина не на ходу, организуем доставку в центр.</p></div></div>
+      <div class="step"><div><b>Согласовываем работы</b><p>Фиксируем стоимость до начала — цена не меняется.</p></div></div>
+      <div class="step"><div><b>Забираете автомобиль</b><p>Гарантия на работы — в заказ-наряде.</p></div></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Частые <span>вопросы</span></h2>
+    <details open>
+      <summary>Как быстро можно записаться?</summary>
+      <div class="a">Обычно ближайшее окно — на следующий день. По срочным случаям принимаем в день обращения.</div>
+    </details>
+    <details>
+      <summary>Цена известна заранее?</summary>
+      <div class="a">Да. После диагностики фиксируем стоимость в заказ-наряде и не меняем её в процессе.</div>
+    </details>
+    <details>
+      <summary>Даёте ли гарантию на работы?</summary>
+      <div class="a">90 дней на работы. Если что-то пойдёт не так — устраним бесплатно.</div>
+    </details>
+    <details>
+      <summary>Можно ли оставить машину на день?</summary>
+      <div class="a">Да, при длительных работах автомобиль хранится на охраняемой парковке центра.</div>
+    </details>
+  </section>
+
+  <section class="cta" id="cta">
+    <div>
+      <h3>Оставьте заявку</h3>
+      <p>Напишите, что случилось с автомобилем, — подскажем по срокам и цене до визита. Работаем ежедневно с 9:00 до 20:00.</p>
+    </div>
+    <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:#28c840;font-weight:700\'>Заявка отправлена. Перезвоним за 15 минут.</p>'">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Телефон" required>
+      <textarea rows="3" placeholder="Что нужно сделать с автомобилем?"></textarea>
+      <button class="btn btn--fill" type="submit">Отправить заявку</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>АВТО<span style="color:var(--accent)">ЦЕНТР</span> · ежедневно 9:00–20:00</div>
+    <a href="tel:+78000000000">8 (800) 000-00-00</a>
+  </footer>
+
+  <p class="demo-note">Демонстрационный прототип: навигация, блоки, FAQ и форма работают. Финальный дизайн — в фирменном стиле заказчика.</p>
+</div>
+</body>
+</html>

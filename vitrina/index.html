@@ -51,17 +51,29 @@
   .sec-head p { color: var(--ink-soft); max-width: 460px; font-size: 15px; }
 
   /* работы */
+  .view-toggle { display: inline-flex; border: 1.5px solid var(--ink); border-radius: 999px; overflow: hidden; }
+  .view-toggle button { border: none; background: transparent; padding: 9px 20px; font: 600 14px var(--f-text); color: var(--ink); cursor: pointer; }
+  .view-toggle button.on { background: var(--ink); color: var(--accent-ink); }
   .works { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
   .work { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease; }
   .work:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(35,34,42,.12); }
   .work__shot { position: relative; aspect-ratio: 1200 / 556; overflow: hidden; background: #e9e2d3; }
   .work__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .4s ease; }
-  .work:hover .work__shot img { transform: scale(1.025); }
+  .work:hover .work__shot img.shot-desktop { transform: scale(1.025); }
+  .works .shot-phone { display: none; }
+  /* телефонный режим: рамка + медленная прокрутка длинного скриншота */
+  .works.view-phone { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+  .works.view-phone .shot-desktop { display: none; }
+  .works.view-phone .work__shot { aspect-ratio: 430 / 860; border: 9px solid var(--ink); border-radius: 38px; overflow: hidden; background: #191820; }
+  .works.view-phone .shot-phone { display: block; position: absolute; top: 0; left: 0; width: 100%; height: auto; max-width: none; object-fit: fill; animation: phoneScroll var(--dur, 16s) ease-in-out infinite alternate; will-change: transform; }
+  .works.view-phone .work:hover .shot-phone { animation-play-state: paused; }
+  @keyframes phoneScroll { from { transform: translateY(0); } to { transform: translateY(var(--shift, -400px)); } }
   .work__body { padding: 16px 20px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .work__body b { font-size: 16.5px; }
   .work__body span { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
   .work__open { flex: none; font-size: 13px; font-weight: 600; border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 14px; }
   .work:hover .work__open { background: var(--ink); color: var(--accent-ink); }
+  .badge { display: inline-block; margin-left: 8px; vertical-align: 2px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; background: var(--accent); color: var(--accent-ink); border-radius: 6px; padding: 2px 7px; }
 
   /* услуги */
   .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
@@ -130,36 +142,44 @@
   <section id="works">
     <div class="sec-head">
       <h2>Работы</h2>
-      <p>Живые демо — нажмите на карточку, чтобы открыть сайт и полистать его как клиент.</p>
+      <p>Живые демо — нажмите на карточку, чтобы открыть сайт и полистать его как клиент. В режиме «Телефон» сайты медленно прокручиваются в рамке смартфона.</p>
+      <span class="view-toggle" role="group" aria-label="Вид превью">
+        <button type="button" class="on" data-view="desktop">Компьютер</button>
+        <button type="button" data-view="phone">Телефон</button>
+      </span>
     </div>
-    <div class="works">
+    <div class="works" id="worksGrid">
       <a class="work" href="works/kaluga-barber/strich.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/strich.jpg" alt="Первый экран сайта Strich" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/strich.jpg" alt="Первый экран сайта Strich" loading="lazy"><img class="shot-phone" src="thumbs/phone-strich.jpg" alt="" aria-hidden="true" loading="lazy" data-h="1164"></span>
         <span class="work__body"><span><b>Strich</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/kaluga-barber/barbershop-1371.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/barbershop-1371.jpg" alt="Первый экран сайта Barbershop 1371" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/barbershop-1371.jpg" alt="Первый экран сайта Barbershop 1371" loading="lazy"><img class="shot-phone" src="thumbs/phone-barbershop-1371.jpg" alt="" aria-hidden="true" loading="lazy" data-h="1164"></span>
         <span class="work__body"><span><b>Barbershop 1371</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/kaluga-barber/firecut.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/firecut.jpg" alt="Первый экран сайта Firecut" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/firecut.jpg" alt="Первый экран сайта Firecut" loading="lazy"><img class="shot-phone" src="thumbs/phone-firecut.jpg" alt="" aria-hidden="true" loading="lazy" data-h="1104"></span>
         <span class="work__body"><span><b>Firecut</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/kaluga-barber/barbershop-x.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/barbershop-x.jpg" alt="Первый экран сайта Барбершоп Х" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/barbershop-x.jpg" alt="Первый экран сайта Барбершоп Х" loading="lazy"><img class="shot-phone" src="thumbs/phone-barbershop-x.jpg" alt="" aria-hidden="true" loading="lazy" data-h="1164"></span>
         <span class="work__body"><span><b>Барбершоп Х</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/flowers-ensk/index.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/flowers-ensk.jpg" alt="Первый экран сайта Все цветы для Энска" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/flowers-ensk.jpg" alt="Первый экран сайта Все цветы для Энска" loading="lazy"><img class="shot-phone" src="thumbs/phone-flowers-ensk.jpg" alt="" aria-hidden="true" loading="lazy" data-h="6046"></span>
         <span class="work__body"><span><b>Все цветы для Энска</b><span>цветочный магазин · Энск</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/santech/index.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/santech.jpg" alt="Первый экран сайта Сантехник и электрик" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/santech.jpg" alt="Первый экран сайта Сантехник и электрик" loading="lazy"><img class="shot-phone" src="thumbs/phone-santech.jpg" alt="" aria-hidden="true" loading="lazy" data-h="6500"></span>
         <span class="work__body"><span><b>Сантехник и электрик</b><span>выездная служба · Калуга</span></span><span class="work__open">Открыть</span></span>
       </a>
       <a class="work" href="works/bn-atelie/index.html" target="_blank" rel="noopener">
-        <span class="work__shot"><img src="thumbs/bn-atelie.jpg" alt="Первый экран сайта ателье БН" loading="lazy"></span>
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/bn-atelie.jpg" alt="Первый экран сайта ателье БН" loading="lazy"><img class="shot-phone" src="thumbs/phone-bn-atelie.jpg" alt="" aria-hidden="true" loading="lazy" data-h="5134"></span>
         <span class="work__body"><span><b>Ателье БН</b><span>ателье · Челябинск</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/avtocenter/index.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img class="shot-desktop" src="thumbs/avtocenter.jpg" alt="Первый экран сайта Автоцентр" loading="lazy"><img class="shot-phone" src="thumbs/phone-avtocenter.jpg" alt="" aria-hidden="true" loading="lazy" data-h="2752"></span>
+        <span class="work__body"><span><b>Автоцентр<span class="badge">KWORK</span></b><span>автосервис · отклик на заказ</span></span><span class="work__open">Открыть</span></span>
       </a>
     </div>
   </section>
@@ -228,13 +248,36 @@
 <script>
 (function () {
   document.getElementById('year').textContent = String(new Date().getFullYear());
-  // Контакты: подставьте свой номер и ник. Формат: wa = "79001234567", tg = "username"
-  var WA_NUMBER = '79153887226';   // ← ваш номер WhatsApp, например 79001234567
-  var TG_NICK = 'Ury19081991';     // ← ваш ник в Telegram без @
+  // Контакты
+  var WA_NUMBER = '79153887226';   // WhatsApp
+  var TG_NICK = 'Ury19081991';     // Telegram без @
   var text = 'Здравствуйте, Юрий! Хочу сайт для своего бизнеса. Ниша: ____. Город: ____. Прошу показать демо.';
   var wa = document.getElementById('wa-btn'), tg = document.getElementById('tg-btn');
   if (WA_NUMBER) wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
   if (TG_NICK) tg.href = 'https://t.me/' + TG_NICK;
+
+  // переключатель «Компьютер / Телефон»
+  var grid = document.getElementById('worksGrid');
+  var btns = document.querySelectorAll('.view-toggle button');
+  function layoutPhones() {
+    if (!grid.classList.contains('view-phone')) return;
+    grid.querySelectorAll('.shot-phone').forEach(function (img) {
+      var shot = img.closest('.work__shot');
+      var h = +img.dataset.h || 1200;
+      var w = shot.clientWidth;
+      var shift = Math.max(0, w * (h - 860) / 430);
+      img.style.setProperty('--shift', (-shift) + 'px');
+      img.style.setProperty('--dur', Math.max(12, shift / 75) + 's');
+    });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.toggle('on', x === b); });
+      grid.classList.toggle('view-phone', b.dataset.view === 'phone');
+      layoutPhones();
+    });
+  });
+  addEventListener('resize', layoutPhones);
 })();
 </script>
 
