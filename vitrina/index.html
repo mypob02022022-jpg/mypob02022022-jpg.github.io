@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Юрий Викторов — сайты для малого бизнеса</title>
+<meta name="description" content="Лендинги для малого бизнеса: барбершопы, ателье, цветочные, мастера выездных услуг. Демо бесплатно, запуск за неделю.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #f4efe6; --surface: #fbf8f2; --ink: #23222a; --ink-soft: #625d66;
+    --accent: #2b2a31; --accent-ink: #f6f1e8; --line: #e3dccd;
+    --f-display: "Unbounded", "Arial Black", system-ui, sans-serif;
+    --f-text: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--f-text); background: var(--canvas); color: var(--ink); line-height: 1.55; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* шапка */
+  .bar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--canvas) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .bar__in { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 16px; flex-wrap: wrap; }
+  .brand { font-family: var(--f-display); font-weight: 600; font-size: 17px; text-decoration: none; color: var(--ink); }
+  .brand small { display: block; font-family: var(--f-text); font-weight: 400; font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
+  .nav { display: flex; gap: 22px; align-items: center; }
+  .nav a { color: var(--ink); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+  .nav a:hover { color: var(--ink-soft); }
+  .nav a.btn, .nav a.btn:hover { color: var(--accent-ink); }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 12px 22px; border-radius: 10px; border: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(35,34,42,.18); }
+  .btn--ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn--ghost:hover { box-shadow: none; background: var(--ink); color: var(--accent-ink); }
+
+  /* герой */
+  .hero { padding: 84px 0 64px; }
+  .hero .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 18px; }
+  .hero h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 52px); line-height: 1.12; max-width: 780px; letter-spacing: -.01em; }
+  .hero p.lead { margin-top: 20px; font-size: 18px; color: var(--ink-soft); max-width: 620px; }
+  .hero__cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero__facts { margin-top: 44px; display: flex; gap: 36px; flex-wrap: wrap; }
+  .fact b { font-family: var(--f-display); font-size: 24px; display: block; }
+  .fact span { font-size: 13px; color: var(--ink-soft); }
+
+  /* секции */
+  section { padding: 56px 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 30px; }
+  .sec-head h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 32px); font-weight: 600; }
+  .sec-head p { color: var(--ink-soft); max-width: 460px; font-size: 15px; }
+
+  /* работы */
+  .works { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+  .work { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease; }
+  .work:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(35,34,42,.12); }
+  .work__shot { position: relative; aspect-ratio: 1200 / 556; overflow: hidden; background: #e9e2d3; }
+  .work__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .4s ease; }
+  .work:hover .work__shot img { transform: scale(1.025); }
+  .work__body { padding: 16px 20px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .work__body b { font-size: 16.5px; }
+  .work__body span { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  .work__open { flex: none; font-size: 13px; font-weight: 600; border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 14px; }
+  .work:hover .work__open { background: var(--ink); color: var(--accent-ink); }
+
+  /* услуги */
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+  .service { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px 22px; }
+  .service h3 { font-family: var(--f-display); font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+  .service p { font-size: 14.5px; color: var(--ink-soft); }
+  .service .price { margin-top: 14px; font-weight: 600; font-size: 15px; }
+  .services-note { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+
+  /* как работаю */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; counter-reset: step; }
+  .step { border-top: 2px solid var(--ink); padding-top: 16px; }
+  .step::before { counter-increment: step; content: "0" counter(step); font-family: var(--f-display); font-size: 14px; color: var(--ink-soft); }
+  .step h3 { font-size: 16.5px; margin: 8px 0 6px; }
+  .step p { font-size: 14px; color: var(--ink-soft); }
+
+  /* написать */
+  .contact { background: var(--accent); color: var(--accent-ink); border-radius: 22px; padding: 48px 44px; }
+  .contact h2 { font-family: var(--f-display); font-size: clamp(22px, 3vw, 32px); font-weight: 600; max-width: 560px; }
+  .contact p { margin-top: 14px; color: #cfc9bd; max-width: 520px; font-size: 15.5px; }
+  .contact__row { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .contact .btn { background: var(--accent-ink); color: var(--ink); }
+  .contact .btn--ghost { background: transparent; color: var(--accent-ink); border-color: var(--accent-ink); }
+  .contact .btn--ghost:hover { background: var(--accent-ink); color: var(--ink); }
+
+  footer { padding: 30px 0 44px; color: var(--ink-soft); font-size: 13.5px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 54px 0 40px; }
+    .nav a:not(.btn) { display: none; }
+    .contact { padding: 34px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top">Юрий Викторов<small>сайты для малого бизнеса</small></a>
+    <nav class="nav">
+      <a href="#works">Работы</a>
+      <a href="#services">Услуги и цены</a>
+      <a href="#process">Как работаю</a>
+      <a class="btn" href="#contact">Написать</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <section class="hero">
+    <p class="kicker">Работаю по всей России · удалённо</p>
+    <h1>Сайты, которые приводят клиентов мастерам и локальному бизнесу</h1>
+    <p class="lead">Делаю лендинги для барбершопов, ателье, цветочных магазинов и выездных служб. Покажу демо вашего будущего сайта до договора — бесплатно.</p>
+    <div class="hero__cta">
+      <a class="btn" href="#contact">Показать демо моего сайта</a>
+      <a class="btn btn--ghost" href="#works">Смотреть работы</a>
+    </div>
+    <div class="hero__facts">
+      <div class="fact"><b>7+</b><span>ниш в портфолио</span></div>
+      <div class="fact"><b>5 дней</b><span>средний срок лендинга</span></div>
+      <div class="fact"><b>0 ₽</b><span>за демо до старта работ</span></div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="sec-head">
+      <h2>Работы</h2>
+      <p>Живые демо — нажмите на карточку, чтобы открыть сайт и полистать его как клиент.</p>
+    </div>
+    <div class="works">
+      <a class="work" href="works/kaluga-barber/strich.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/strich.jpg" alt="Первый экран сайта Strich" loading="lazy"></span>
+        <span class="work__body"><span><b>Strich</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/kaluga-barber/barbershop-1371.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/barbershop-1371.jpg" alt="Первый экран сайта Barbershop 1371" loading="lazy"></span>
+        <span class="work__body"><span><b>Barbershop 1371</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/kaluga-barber/firecut.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/firecut.jpg" alt="Первый экран сайта Firecut" loading="lazy"></span>
+        <span class="work__body"><span><b>Firecut</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/kaluga-barber/barbershop-x.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/barbershop-x.jpg" alt="Первый экран сайта Барбершоп Х" loading="lazy"></span>
+        <span class="work__body"><span><b>Барбершоп Х</b><span>барбершоп · Калуга</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/flowers-ensk/index.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/flowers-ensk.jpg" alt="Первый экран сайта Все цветы для Энска" loading="lazy"></span>
+        <span class="work__body"><span><b>Все цветы для Энска</b><span>цветочный магазин · Энск</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/santech/index.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/santech.jpg" alt="Первый экран сайта Сантехник и электрик" loading="lazy"></span>
+        <span class="work__body"><span><b>Сантехник и электрик</b><span>выездная служба · Калуга</span></span><span class="work__open">Открыть</span></span>
+      </a>
+      <a class="work" href="works/bn-atelie/index.html" target="_blank" rel="noopener">
+        <span class="work__shot"><img src="thumbs/bn-atelie.jpg" alt="Первый экран сайта ателье БН" loading="lazy"></span>
+        <span class="work__body"><span><b>Ателье БН</b><span>ателье · Челябинск</span></span><span class="work__open">Открыть</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="sec-head">
+      <h2>Услуги и цены</h2>
+      <p>Точную цену назову, когда увижу задачу. Демо — бесплатно.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <h3>Лендинг под ключ</h3>
+        <p>Структура, тексты, дизайн, онлайн-запись или форма заявки, публикация на вашем адресе.</p>
+        <p class="price">от 15 000 ₽</p>
+      </div>
+      <div class="service">
+        <h3>Демо до договора</h3>
+        <p>Собираю первый экран вашего будущего сайта с вашими ценами и телефоном. Нравится — работаем дальше.</p>
+        <p class="price">0 ₽</p>
+      </div>
+      <div class="service">
+        <h3>Перенос на Тильду</h3>
+        <p>Знакомый вам конструктор: редактируете тексты и фото сами, я настраиваю и публикую.</p>
+        <p class="price">от 8 000 ₽</p>
+      </div>
+      <div class="service">
+        <h3>Правки и поддержка</h3>
+        <p>Меняю цены, фото, тексты, добавляю разделы. Отвечаю в день обращения.</p>
+        <p class="price">от 1 500 ₽ / правка</p>
+      </div>
+    </div>
+    <p class="services-note">Срок лендинга — обычно 5–7 дней от брифа до публикации.</p>
+  </section>
+
+  <section id="process">
+    <div class="sec-head">
+      <h2>Как работаю</h2>
+      <p>От демо до сайта на вашем адресе — четыре шага, без созвонов на час.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Вы пишете</h3><p>Ниша, город, чем гордитесь. За час присылаю вопросы по делу.</p></div>
+      <div class="step"><h3>Я показываю демо</h3><p>Первый экран вашего сайта с вашим телефоном и ценами — 1–2 дня.</p></div>
+      <div class="step"><h3>Утверждаем и делаем</h3><p>Правки по пожеланиям входят. Показываю результат до публикации.</p></div>
+      <div class="step"><h3>Сайт в работе</h3><p>Публикация на вашем адресе или перенос на Тильду. Остаюсь на связи.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Покажу демо вашего сайта</h2>
+      <p>Напишите нишу и город — через 1–2 дня пришлю первый экран вашего будущего сайта. Сообщение уже набрано, останется отправить.</p>
+      <div class="contact__row">
+        <a class="btn" id="wa-btn" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn btn--ghost" id="tg-btn" href="#" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Юрий Викторов · сайты для малого бизнеса</span>
+    <span>© <span id="year">2026</span> · собрано в паре с Kimi</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = String(new Date().getFullYear());
+  // Контакты: подставьте свой номер и ник. Формат: wa = "79001234567", tg = "username"
+  var WA_NUMBER = '79153887226';   // ← ваш номер WhatsApp, например 79001234567
+  var TG_NICK = 'Ury19081991';     // ← ваш ник в Telegram без @
+  var text = 'Здравствуйте, Юрий! Хочу сайт для своего бизнеса. Ниша: ____. Город: ____. Прошу показать демо.';
+  var wa = document.getElementById('wa-btn'), tg = document.getElementById('tg-btn');
+  if (WA_NUMBER) wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  if (TG_NICK) tg.href = 'https://t.me/' + TG_NICK;
+})();
+</script>
+
+</body>
+</html>

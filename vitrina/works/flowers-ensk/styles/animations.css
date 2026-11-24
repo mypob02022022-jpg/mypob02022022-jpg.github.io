@@ -1,0 +1,479 @@
+/* ============================================================
+   Премиальные анимации «Все цветы для Энска»
+   Подключается после style.css и дополняет его, не меняя.
+   ============================================================ */
+
+/* ---------- 1. Первый экран: плавное появление заголовка и фото ---------- */
+@keyframes flowerHeroEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text > * {
+  animation: flowerHeroEnter 900ms cubic-bezier(.22, .7, .26, 1) both;
+}
+.hero-text > *:nth-child(1) { animation-delay: .05s; }
+.hero-text > *:nth-child(2) { animation-delay: .18s; }
+.hero-text > *:nth-child(3) { animation-delay: .31s; }
+.hero-text > *:nth-child(4) { animation-delay: .44s; }
+.hero-text > *:nth-child(5) { animation-delay: .57s; }
+.hero-photo {
+  animation: flowerHeroEnter 1000ms cubic-bezier(.22, .7, .26, 1) .30s both;
+}
+
+/* ---------- 2. Карточки букетов: каскад при прокрутке ----------
+   Задержки перехода расставляет scripts/animations.js,
+   сами переходы описаны в style.css (.reveal / .visible). */
+
+/* ---------- 3. Фотографии букетов: лёгкое увеличение ---------- */
+.card img {
+  transition: transform 650ms cubic-bezier(.2, .7, .2, 1);
+}
+.card:hover img,
+.card:focus-within img {
+  transform: scale(1.05);
+}
+
+/* ---------- 4. Кнопки: плавный подъём, тень и нажатие ---------- */
+.btn {
+  transition: background .25s ease, border-color .25s ease, color .25s ease,
+              transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  /* мягкая тень подъёма + золотистое свечение (ред. v2) */
+  box-shadow: 0 10px 24px rgba(25, 55, 40, .16), 0 0 24px rgba(201, 162, 39, .45), inset 0 0 14px rgba(201, 162, 39, .1);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(25, 55, 40, .14), 0 0 14px rgba(201, 162, 39, .3);
+}
+
+/* ---------- 5. Фотолента: медленная горизонтальная прокрутка ---------- */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  /* мягкое растворение краёв ленты */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+/* две одинаковые ленты идут друг за другом; каждая съезжает
+   ровно на свою ширину — вторая занимает место первой без скачка */
+.marquee-track {
+  display: flex;
+  flex: 0 0 auto;
+  width: max-content;
+  animation: flowerMarquee 45s linear infinite;
+}
+/* остановка при наведении, фокусе с клавиатуры и по кнопке */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes flowerMarquee {
+  to { transform: translateX(-100%); }
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: clamp(220px, 28vw, 320px);
+  margin: 0 20px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+.marquee-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.marquee-item figcaption {
+  font-size: .88rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Кнопка управления лентой */
+.marquee-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 18px;
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--green);
+  background: transparent;
+  border: 1.5px solid var(--green);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+.marquee-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(25, 55, 40, .16);
+}
+
+/* ---------- 7. Каталог: кнопка заказа и окно заказа ---------- */
+button.btn {
+  font-family: inherit; /* у <button> шрифт по умолчанию иной, чем у <a> */
+}
+.order-btn {
+  margin-top: 12px;
+  padding: 10px 18px;
+  font-size: .92rem;
+}
+
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(31, 61, 43, .55);
+  backdrop-filter: blur(3px);
+  animation: orderModalFade .25s ease both;
+}
+.order-modal[hidden] {
+  display: none;
+}
+@keyframes orderModalFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.order-modal-open {
+  overflow: hidden; /* блокируем прокрутку фона, пока окно открыто */
+}
+
+.order-modal-box {
+  position: relative;
+  width: min(460px, 100%);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px 30px 26px;
+  box-shadow: 0 30px 70px -30px rgba(31, 61, 43, .5);
+  text-align: center;
+  animation: orderBoxIn .3s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes orderBoxIn {
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.order-modal-box h3 {
+  margin-bottom: 10px;
+}
+.order-modal-box p {
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.55;
+}
+.order-modal-bouquet {
+  font-weight: 700;
+  color: var(--bordeaux) !important;
+  font-size: 1.05rem !important;
+  margin-bottom: 12px;
+}
+.order-modal-box .btn {
+  margin-top: 14px;
+}
+.order-modal-note {
+  font-size: .85rem !important;
+  margin: 14px 0 0;
+}
+.order-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--green);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.order-modal-close:hover {
+  background: var(--ivory);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .order-modal-box {
+    padding: 26px 20px 22px;
+  }
+  .order-modal-box .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ---------- 8. Услуги: иконки, описания, деликатный подъём ---------- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  color: var(--bordeaux);
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1), background .3s ease, color .3s ease;
+}
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.service-desc {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: .93rem;
+  line-height: 1.5;
+}
+.service-card .price {
+  margin-top: auto;
+}
+.services-note {
+  margin: 28px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.services-grid .card {
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s ease, border-color .3s ease;
+}
+.services-grid .card:hover {
+  transform: translateY(-4px);
+  border-color: #E2D7BF;
+  box-shadow: 0 16px 34px -18px rgba(31, 61, 43, .28);
+}
+.services-grid .card:hover .service-icon {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--green);
+  transform: scale(1.06) rotate(-4deg);
+}
+
+/* ---------- 9. Свадьба: увеличение фото и каскадное появление ---------- */
+/* zoom через свойство scale — не конфликтует с transform у .reveal;
+   clip-path обрезает увеличенное фото по границам карточки */
+.photo-pair img {
+  clip-path: inset(0 round 14px);
+  transition: scale .45s cubic-bezier(.2, .7, .2, 1);
+}
+.photo-pair img:hover {
+  scale: 1.035;
+}
+
+/* ---------- 10. Доставка: примечание и деликатный подъём ---------- */
+.delivery-note {
+  margin: 26px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+}
+/* подъём через свойство translate — не мешает переходам .reveal */
+.delivery-card {
+  transition: translate .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s ease;
+}
+.delivery-card:hover {
+  translate: 0 -4px;
+  box-shadow: 0 16px 34px -18px rgba(31, 61, 43, .28);
+}
+
+/* ---------- 11. Преимущества: золотые иконки и подъём карточек ---------- */
+.adv-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.adv-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, .12);
+  color: #B08A1E;
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1);
+}
+.adv-icon svg {
+  width: 21px;
+  height: 21px;
+}
+/* подъём через свойство translate — не мешает переходам .reveal */
+.adv-card {
+  transition: translate .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s ease;
+}
+#advantages .adv-card:hover {
+  translate: 0 -3px;
+  box-shadow: 0 14px 30px -16px rgba(31, 61, 43, .26);
+}
+#advantages .adv-card:hover .adv-icon {
+  transform: scale(1.08);
+}
+
+/* ---------- 12. FAQ: плавное раскрытие ответа ---------- */
+/* details/summary — нативный аккордеон: клик и клавиатура работают без JS;
+   анимируем появление текста при каждом открытии */
+details[open] p {
+  animation: faqOpen .32s ease both;
+  transform-origin: top;
+}
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- 13. Карта: обёртка, масштаб, карточка магазина ---------- */
+.map-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--ivory);
+}
+.map-wrap #ensc-map {
+  border: 0;
+  display: block;
+  transition: transform .55s cubic-bezier(.2, .7, .2, 1);
+}
+/* карточка поверх карты — не масштабируется вместе с svg */
+.map-card {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  max-width: min(280px, calc(100% - 28px));
+  padding: 14px 38px 14px 16px;
+  background: #FFFDF8;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 14px 30px -14px rgba(31, 61, 43, .3);
+  font-size: .92rem;
+  color: var(--ink);
+  animation: faqOpen .3s ease both;
+}
+.map-card p {
+  margin: 0 0 4px;
+}
+.map-card-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--green);
+}
+.map-card-kind {
+  color: var(--muted);
+}
+.map-card-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+.map-card-close:hover {
+  background: var(--ivory);
+  color: var(--green);
+}
+/* кнопки масштаба поверх карты */
+.map-zoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+.map-zoom button {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #FFFDF8;
+  color: var(--green);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(31, 61, 43, .12);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.map-zoom button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: var(--gold);
+  color: var(--green);
+}
+.map-zoom button:disabled {
+  opacity: .45;
+  cursor: default;
+}
+/* дом 13 — акцент, что он интерактивен */
+.shop-house {
+  cursor: pointer;
+}
+.shop-house rect {
+  stroke: #C9A24B;
+  stroke-width: 2;
+  fill: #F3E7C8;
+}
+#shop-marker.highlight .pulse {
+  stroke-width: 3;
+}
+
+/* ---------- 6. Доступность: отключение анимаций ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text > *, .hero-photo,
+  .marquee-track,
+  .order-modal, .order-modal-box,
+  .map-card, .btn::after,
+  details[open] p {
+    animation: none !important;
+  }
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .card img, .btn, .marquee-toggle,
+  .services-grid .card, .service-icon,
+  .delivery-card, .adv-card, .adv-icon,
+  .map-wrap #ensc-map, .map-zoom button,
+  .photo-pair img {
+    transition: none;
+  }
+  .btn:hover, .marquee-toggle:hover,
+  .services-grid .card:hover,
+  .delivery-card:hover, .adv-card:hover,
+  .adv-icon, .photo-pair img:hover {
+    transform: none;
+    box-shadow: none;
+    scale: none;
+    translate: none;
+  }
+}
