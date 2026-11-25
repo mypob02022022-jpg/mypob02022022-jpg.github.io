@@ -45,6 +45,14 @@
   .chip b { font-weight: 700; }
   .hero__cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
 
+  /* бегущая строка ниш */
+  .marquee { overflow: hidden; background: var(--accent); color: var(--accent-ink); padding: 15px 0; }
+  .marquee__track { display: flex; width: max-content; animation: marq 38s linear infinite; }
+  .marquee__track span { font-family: var(--f-display); font-weight: 500; font-size: 14.5px; letter-spacing: .02em; white-space: nowrap; display: flex; align-items: center; gap: 36px; padding-right: 36px; }
+  .marquee__track span::after { content: "✦"; opacity: .4; font-size: 11px; }
+  @keyframes marq { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
   /* секции */
   section { padding: 54px 0; }
   .sec-head { margin-bottom: 30px; }
@@ -204,6 +212,13 @@
       <a class="btn btn--ghost" id="bot-btn" href="https://t.me/SitesConsult_bot" target="_blank" rel="noopener">Мой бот-помощник</a>
     </div>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Барбершопы и парикмахерские</span><span>Шиномонтаж и автосервис</span><span>Ателье и ремонт одежды</span><span>Доставка цветов</span><span>Сантехника и электрика</span><span>Маникюр и бьюти</span><span>Клининг</span><span>Мебель на заказ</span><span>Ремонт квартир</span><span>Грузоперевозки</span>
+      <span>Барбершопы и парикмахерские</span><span>Шиномонтаж и автосервис</span><span>Ателье и ремонт одежды</span><span>Доставка цветов</span><span>Сантехника и электрика</span><span>Маникюр и бьюти</span><span>Клининг</span><span>Мебель на заказ</span><span>Ремонт квартир</span><span>Грузоперевозки</span>
+    </div>
+  </div>
 
   <section id="why">
     <div class="sec-head">
